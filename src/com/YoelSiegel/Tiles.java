@@ -30,12 +30,13 @@ public class Tiles extends JPanel {
         this.piece = piece;
         setPieceOn(true);
         this.piece.setType(pieceType);
-        this.piece.setPiececolor(pieceColor);
+        this.piece.setPieceColor(pieceColor);
         setBackground(color);
         try {
             BufferedImage tempimage=ImageIO.read(new File(theString));
             BufferedImage tempImage2=resize(tempimage, 50,50);
             image=tempImage2;
+            piece.image=image;
         } catch (IOException ex) {
         }
         repaint();
@@ -54,10 +55,10 @@ public class Tiles extends JPanel {
         super.paintComponent(g);
         g.drawImage(image, 50, 35, null ); // see javadoc for more info on the parameters
     }
-    /*public boolean isPieceOn() {
+    public boolean isPieceOn() {
         return isPieceOn;
     }
-*/
+
     public void setPieceOn(boolean pieceOn) {
         isPieceOn = pieceOn;
     }

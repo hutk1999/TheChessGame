@@ -48,6 +48,9 @@ public class ChessBoard extends JFrame {
     public Tiles[][] getChessboard() {
         return chessboard;
     }
+    public Tiles gettile(int i, int j) {
+        return getChessboard()[i][j];
+    }
 /*
     public void setChessboard(Tiles[][] chessboard) {
         this.chessboard = chessboard;
