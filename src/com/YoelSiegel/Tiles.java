@@ -3,6 +3,7 @@ import javax.imageio.ImageIO;
 import javax.imageio.ImageReader;
 import javax.imageio.stream.ImageInputStream;
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -20,6 +21,7 @@ public class Tiles extends JPanel {
     private int y;
     private BufferedImage image;
     private Color color;
+    Border blackline = BorderFactory.createLineBorder(Color.black);
     public Tiles(PieceColor tileColor, Color mycolor, ChessBoard temp){
         ourTempBoard=temp;
         this.isPieceOn=false;
@@ -27,6 +29,7 @@ public class Tiles extends JPanel {
         this.tileColor=tileColor;
         this.color=mycolor;
         setBackground(color);
+        setBorder(blackline);
         addMouseListener(new mousy());
     }
 
