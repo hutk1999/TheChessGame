@@ -21,7 +21,9 @@ public class Pawn extends Piece{
         //if the one in front of it is empty make it green
         if(temp.getChessboard()[getX()+z][getY()].isPieceOn()!=true){
             temp.getChessboard()[getX()+z][getY()].setTheBackground(Color.green);
-        //    temp.getChessboard()[getX()+z][getY()].
+            temp.getChessboard()[getX()+z][getY()].setInattack(false);
+            temp.getChessboard()[getX()+z][getY()].setAttackingx(getX());
+            temp.getChessboard()[getX()+z][getY()].setAttackingy(getY());
         }
         //if the one diagonal left is empty then check if 2 diagonal is empty
         if(z==1) {
@@ -33,6 +35,9 @@ public class Pawn extends Piece{
                         if (temp.getChessboard()[getX() + 1][getY() + 1].getPiece().getPieceColor() != getPieceColor()) {
 
                             temp.getChessboard()[getX() + 1][getY() + 1].setTheBackground(Color.green);
+                            temp.getChessboard()[getX() + 1][getY() + 1].setInattack(true);
+                            temp.getChessboard()[getX() + 1][getY() + 1].setAttackingx(getX());
+                            temp.getChessboard()[getX() + 1][getY() + 1].setAttackingy(getY());
 
                         }
                     }
@@ -43,6 +48,9 @@ public class Pawn extends Piece{
                     if (temp.getChessboard()[getX() + 1][getY() - 1].getPiece() != null) {
                         if (temp.getChessboard()[getX() + 1][getY() - 1].getPiece().getPieceColor() != getPieceColor()) {
                             temp.getChessboard()[getX() + 1][getY() - 1].setTheBackground(Color.green);
+                            temp.getChessboard()[getX() + 1][getY() - 1].setInattack(true);
+                            temp.getChessboard()[getX() + 1][getY() - 1].setAttackingx(getX());
+                            temp.getChessboard()[getX() + 1][getY() - 1].setAttackingy(getY());
                         }
                     }
                 }
@@ -55,9 +63,10 @@ public class Pawn extends Piece{
                 } else {
                     if (temp.getChessboard()[getX() - 1][getY() + 1].getPiece() != null) {
                         if (temp.getChessboard()[getX() - 1][getY() + 1].getPiece().getPieceColor() != getPieceColor()) {
-
                             temp.getChessboard()[getX() - 1][getY() + 1].setTheBackground(Color.green);
-
+                            temp.getChessboard()[getX() - 1][getY() + 1].setInattack(true);
+                            temp.getChessboard()[getX() - 1][getY() + 1].setAttackingx(getX());
+                            temp.getChessboard()[getX() - 1][getY() + 1].setAttackingy(getY());
                         }
                     }
                 }
@@ -67,6 +76,9 @@ public class Pawn extends Piece{
                     if (temp.getChessboard()[getX() - 1][getY() - 1].getPiece() != null) {
                         if (temp.getChessboard()[getX() - 1][getY() - 1].getPiece().getPieceColor() != getPieceColor()) {
                             temp.getChessboard()[getX() - 1][getY() - 1].setTheBackground(Color.green);
+                            temp.getChessboard()[getX() - 1][getY() - 1].setInattack(true);
+                            temp.getChessboard()[getX() - 1][getY() - 1].setAttackingx(getX());
+                            temp.getChessboard()[getX() - 1][getY() - 1].setAttackingy(getY());
                         }
                     }
                 }
@@ -78,6 +90,9 @@ public class Pawn extends Piece{
                 if (temp.getChessboard()[getX() + 1][getY()].isPieceOn() == false) {
                     if (temp.getChessboard()[getX() + 2][getY()].isPieceOn() == false) {
                         temp.getChessboard()[getX() + 2][getY()].setTheBackground(Color.green);
+                        temp.getChessboard()[getX() + 2][getY()].setInattack(false);
+                        temp.getChessboard()[getX() + 2][getY()].setAttackingx(getX());
+                        temp.getChessboard()[getX() + 2][getY()].setAttackingy(getY());
                     }
                 }
             }
@@ -87,6 +102,9 @@ public class Pawn extends Piece{
                 if(temp.getChessboard()[getX()-1][getY()].isPieceOn()==false){
                     if(temp.getChessboard()[getX()-2][getY()].isPieceOn()==false){
                         temp.getChessboard()[getX()-2][getY()].setTheBackground(Color.green);
+                        temp.getChessboard()[getX() - 2][getY()].setInattack(false);
+                        temp.getChessboard()[getX() - 2][getY()].setAttackingx(getX());
+                        temp.getChessboard()[getX() - 2][getY()].setAttackingy(getY());
                     }
                 }
             }

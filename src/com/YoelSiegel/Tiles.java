@@ -142,8 +142,18 @@ class mousy extends MouseAdapter {
     @Override
     public void mousePressed(MouseEvent e) {
 
-        if((background==Color.green)&&(getPiece()!=null)){
-
+        if((background==Color.green)){
+            //we are gonna move the piece
+            if(inattack){
+                attack(ourTempBoard,x,y);
+            }
+            else{
+                movepiece(ourTempBoard,x,y);
+            }
+            //then we check if there is a check
+            //if there is we move it back and send a alert that there is a check
+            // after every turn we check to see if the other guy is in check and make a alert that there is a check
+            //we also need a turn function number
         }
         else {
             for (int i = 0; i < 8; i++) {
@@ -183,7 +193,12 @@ class mousy extends MouseAdapter {
         repaint();
     }
 }
+public void movepiece(ChessBoard temp,int x,int y){
 
+}
+public void attack(ChessBoard temp,int x, int y){
+
+}
 
 
 
