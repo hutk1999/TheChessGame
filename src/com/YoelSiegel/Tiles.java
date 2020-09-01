@@ -141,14 +141,14 @@ class mousy extends MouseAdapter {
 
     @Override
     public void mousePressed(MouseEvent e) {
-
-        if((background==Color.green)){
+        background = getBackground();
+        if(background==Color.green){
             //we are gonna move the piece
             if(inattack){
-                attack(ourTempBoard,x,y);
+                attack(ourTempBoard);
             }
             else{
-                movepiece(ourTempBoard,x,y);
+                movepiece(ourTempBoard);
             }
             //then we check if there is a check
             //if there is we move it back and send a alert that there is a check
@@ -165,7 +165,7 @@ class mousy extends MouseAdapter {
             }
         }
 
-        background = getBackground();
+
         if(piece==null){}
         else{
             getPiece().getLegalMoves(ourTempBoard);
@@ -193,10 +193,12 @@ class mousy extends MouseAdapter {
         repaint();
     }
 }
-public void movepiece(ChessBoard temp,int x,int y){
+public void movepiece(ChessBoard temp){
+    Tiles attacker=temp.getChessboard()[attackingx][attackingy];
+    Tiles destination=temp.getChessboard()[getX()][getY()];
 
 }
-public void attack(ChessBoard temp,int x, int y){
+public void attack(ChessBoard temp){
 
 }
 
