@@ -57,7 +57,7 @@ public class ChessBoard extends JFrame {
     }
 */
     public void makeBoard() throws IOException {
-        Pawn bptemp0 = new Pawn(PieceColor.BLACK, 1, 0);
+      /*  Pawn bptemp0 = new Pawn(PieceColor.BLACK, 1, 0);
         getChessboard()[1][0].setPiece(bptemp0, PieceType.PAWN, PieceColor.BLACK, "src/com/YoelSiegel/Images/black_pawn.png");
         Pawn bptemp1 = new Pawn(PieceColor.BLACK, 1, 1);
         getChessboard()[1][1].setPiece(bptemp1, PieceType.PAWN, PieceColor.BLACK, "src/com/YoelSiegel/Images/black_pawn.png");
@@ -89,7 +89,7 @@ public class ChessBoard extends JFrame {
         getChessboard()[6][6].setPiece(wptemp6, PieceType.PAWN, PieceColor.WHITE, "src/com/YoelSiegel/Images/white_pawn.png");
         Pawn wptemp7 = new Pawn(PieceColor.WHITE, 6, 7);
         getChessboard()[6][7].setPiece(wptemp7, PieceType.PAWN, PieceColor.WHITE, "src/com/YoelSiegel/Images/white_pawn.png");
-        Bishop bbtemp0 = new Bishop(PieceColor.BLACK, 0, 2);
+        */Bishop bbtemp0 = new Bishop(PieceColor.BLACK, 0, 2);
         getChessboard()[0][2].setPiece(bbtemp0, PieceType.BISHOP, PieceColor.BLACK,"src/com/YoelSiegel/Images/black_bishop.png");
         Bishop bbtemp1 = new Bishop(PieceColor.BLACK, 0, 5);
         getChessboard()[0][5].setPiece(bbtemp1, PieceType.BISHOP, PieceColor.BLACK, "src/com/YoelSiegel/Images/black_bishop.png");

@@ -139,8 +139,7 @@ class mousy extends MouseAdapter {
         else{
             getPiece().getLegalMoves(ourTempBoard);
         }
-        setBackground(Color.GREEN);
-        repaint();
+       repaint();
 
     }
 
