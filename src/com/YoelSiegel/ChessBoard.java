@@ -16,7 +16,7 @@ public class ChessBoard extends JFrame {
     public List<Piece> whiteList=new ArrayList<>();
     public ChessBoard() {
         this.setLayout(new BorderLayout());
-        this.setSize(1200, 800);
+        this.setSize(1200, 1000);
         this.setResizable(false);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -25,10 +25,10 @@ public class ChessBoard extends JFrame {
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
                 if(((i+j)%2)==0){
-                    chessboard[i][j]=new Tiles(PieceColor.WHITE ,Color.lightGray);
+                    chessboard[i][j]=new Tiles(PieceColor.WHITE ,Color.lightGray, this);
                 }
                 else{
-                    chessboard[i][j]=new Tiles(PieceColor.BLACK ,Color.DARK_GRAY);
+                    chessboard[i][j]=new Tiles(PieceColor.BLACK ,Color.DARK_GRAY, this);
                 }
                 gamePanel.add(chessboard[i][j]);
             }

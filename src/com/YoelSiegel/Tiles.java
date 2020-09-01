@@ -14,12 +14,14 @@ import java.util.Iterator;
 public class Tiles extends JPanel {
     private boolean isPieceOn;
     private Piece piece;
+    private ChessBoard ourTempBoard;
     private PieceColor tileColor;
     private int x;
     private int y;
     private BufferedImage image;
     private Color color;
-    public Tiles(PieceColor tileColor, Color mycolor){
+    public Tiles(PieceColor tileColor, Color mycolor, ChessBoard temp){
+        ourTempBoard=temp;
         this.isPieceOn=false;
         this.piece=null;
         this.tileColor=tileColor;
@@ -42,6 +44,11 @@ public class Tiles extends JPanel {
             piece.image=image;
         } catch (IOException ex) {
         }
+        repaint();
+    }
+    public void setTheBackground(Color temp){
+        this.color=temp;
+        setBackground(color);
         repaint();
     }
 
@@ -116,9 +123,12 @@ class mousy extends MouseAdapter {
     public void mousePressed(MouseEvent e) {
 
         background = getBackground();
-
-            setBackground(Color.GREEN);
-            repaint();
+        if(piece==null){}
+        else{
+            getPiece().getLegalMoves(ourTempBoard);
+        }
+        setBackground(Color.GREEN);
+        repaint();
 
     }
 
