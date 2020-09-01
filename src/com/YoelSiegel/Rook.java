@@ -7,7 +7,7 @@ public class Rook extends Piece{
 
         super(pieceColor, x, y, PieceType.ROOK);
     }
-    public void getLegalMoves(ChessBoard temp){
+    /*public void getLegalMoves(ChessBoard temp){
         for (int i = this.getY() + 1; i<8; i++) {
             if (temp.getChessboard()[getX()][i].isPieceOn()) {
                 if(temp.getChessboard()[getX()][i].getPiece().getPieceColor()!=getPieceColor()){
@@ -45,6 +45,9 @@ public class Rook extends Piece{
         return true;
     }
 
+}
+
+*/
 
 
 
@@ -54,7 +57,4 @@ public class Rook extends Piece{
 
 
 
-
-
-    }
 }

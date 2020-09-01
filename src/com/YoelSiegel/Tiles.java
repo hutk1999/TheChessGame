@@ -14,14 +14,14 @@ import java.util.Iterator;
 public class Tiles extends JPanel {
     private boolean isPieceOn;
     private Piece piece;
+    private ChessBoard ourTempBoard;
     private PieceColor tileColor;
     private int x;
     private int y;
-    private ChessBoard ourTempBoard;
     private BufferedImage image;
     private Color color;
     public Tiles(PieceColor tileColor, Color mycolor, ChessBoard temp){
-        this.ourTempBoard=temp;
+        ourTempBoard=temp;
         this.isPieceOn=false;
         this.piece=null;
         this.tileColor=tileColor;
@@ -44,6 +44,10 @@ public class Tiles extends JPanel {
             piece.image=image;
         } catch (IOException ex) {
         }
+        repaint();
+    }
+    public void setTheBackground(Color temp){
+        setBackground(temp);
         repaint();
     }
 
@@ -71,50 +75,44 @@ public class Tiles extends JPanel {
     public Piece getPiece() {
         return piece;
     }
-
-    public void setTheBackground(Color temp) {
-        setBackground(temp);
-        repaint();
+/*
+    public void setPiece(Piece piece) {
+        this.piece = piece;
     }
 
-    /*
-        public void setPiece(Piece piece) {
-            this.piece = piece;
-        }
+    public PieceColor getTileColor() {
+        return tileColor;
+    }
 
-        public PieceColor getTileColor() {
-            return tileColor;
-        }
+    public void setTileColor(PieceColor tileColor) {
+        this.tileColor = tileColor;
+    }
 
-        public void setTileColor(PieceColor tileColor) {
-            this.tileColor = tileColor;
-        }
+    @Override
+    public int getX() {
+        return x;
+    }
 
-        @Override
-        public int getX() {
-            return x;
-        }
+    public void setX(int x) {
+        this.x = x;
+    }
 
-        public void setX(int x) {
-            this.x = x;
-        }
+    @Override
+    public int getY() {
+        return y;
+    }
 
-        @Override
-        public int getY() {
-            return y;
-        }
+    public void setY(int y) {
+        this.y = y;
+    }
 
-        public void setY(int y) {
-            this.y = y;
-        }
+    /*public BufferedImage getImage() {
+        return image;
+    }
 
-        /*public BufferedImage getImage() {
-            return image;
-        }
-
-        public void setImage(BufferedImage image) {
-            this.image = image;
-        }*/
+    public void setImage(BufferedImage image) {
+        this.image = image;
+    }*/
 class mousy extends MouseAdapter {
     private Color background;
     private Color backbound;
@@ -123,23 +121,27 @@ class mousy extends MouseAdapter {
     @Override
     public void mousePressed(MouseEvent e) {
 
-        background = getBackground();
         if(background==Color.green){
 
         }
-        else{
-            for(int i=0;i<8;i++){
-                for(int j=0;j<8;j++){
-                    if(ourTempBoard.getChessboard()[i][j].getBackground()==Color.green){
+        else {
+            for (int i = 0; i < 8; i++) {
+                for (int j = 0; j < 8; j++) {
+                    if (ourTempBoard.getChessboard()[i][j].getBackground() == Color.green) {
                         ourTempBoard.getChessboard()[i][j].setBackground(ourTempBoard.getChessboard()[i][j].color);
                     }
                 }
             }
+        }
+
+        background = getBackground();
         if(piece==null){}
         else{
             getPiece().getLegalMoves(ourTempBoard);
-                    }
-    }
+        }
+        setBackground(Color.GREEN);
+        repaint();
+
     }
 
             @Override
