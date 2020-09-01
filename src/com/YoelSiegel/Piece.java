@@ -15,7 +15,6 @@ public class Piece {
         this.x = x;
         this.y = y;
     }
-
     public void getLegalMoves(ChessBoard temp){}
     public boolean isMoveLegal(ChessBoard temp, int x, int y, boolean realmove){ return false;}
 
