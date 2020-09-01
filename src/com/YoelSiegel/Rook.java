@@ -62,7 +62,6 @@ public class Rook extends Piece {
                         break;
                     }
                 } else {
-                    System.out.println("in here");
                     temp.getChessboard()[getX()-i][getY()].setTheBackground(Color.green);
                 }
             }
