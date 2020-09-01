@@ -4,10 +4,12 @@ import javax.imageio.ImageReader;
 import javax.imageio.stream.ImageInputStream;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.util.Iterator;
-import org.apache.commons.io.IOUtils;
+
 
 public class Tiles extends JPanel {
     private boolean isPieceOn;
@@ -23,6 +25,7 @@ public class Tiles extends JPanel {
         this.tileColor=tileColor;
         this.color=mycolor;
         setBackground(color);
+        addMouseListener(new mousy());
     }
 
 
@@ -104,7 +107,47 @@ public class Tiles extends JPanel {
     public void setImage(BufferedImage image) {
         this.image = image;
     }*/
+class mousy extends MouseAdapter {
+    private Color background;
+    private Color backbound;
+
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+
+        background = getBackground();
+
+            setBackground(Color.GREEN);
+            repaint();
+
+    }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                setBackground(background);
+                repaint();
+
+            }
+    @Override
+    public void mouseEntered(MouseEvent e) {
+        backbound=getBackground();
+        setBackground(backbound);
+        repaint();
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+        setBackground(backbound);
+        repaint();
+    }
 }
+
+
+
+
+}
+
+
 
 
 

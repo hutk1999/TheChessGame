@@ -16,7 +16,7 @@ public class ChessBoard extends JFrame {
     public List<Piece> whiteList=new ArrayList<>();
     public ChessBoard() {
         this.setLayout(new BorderLayout());
-        this.setSize(1200, 1000);
+        this.setSize(1200, 800);
         this.setResizable(false);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -25,7 +25,7 @@ public class ChessBoard extends JFrame {
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
                 if(((i+j)%2)==0){
-                    chessboard[i][j]=new Tiles(PieceColor.WHITE ,Color.WHITE);
+                    chessboard[i][j]=new Tiles(PieceColor.WHITE ,Color.lightGray);
                 }
                 else{
                     chessboard[i][j]=new Tiles(PieceColor.BLACK ,Color.DARK_GRAY);
@@ -58,9 +58,9 @@ public class ChessBoard extends JFrame {
 */
     public void makeBoard() throws IOException {
         Pawn bptemp0 = new Pawn(PieceColor.BLACK, 1, 0);
-        getChessboard()[1][0].setPiece(bptemp0, PieceType.PAWN, PieceColor.BLACK, "C:\\Users\\WIN-10\\TheChessGame\\src\\com\\YoelSiegel\\Images\\black_pawn.png");
+        getChessboard()[1][0].setPiece(bptemp0, PieceType.PAWN, PieceColor.BLACK, "src/com/YoelSiegel/Images/black_pawn.png");
         Pawn bptemp1 = new Pawn(PieceColor.BLACK, 1, 1);
-        getChessboard()[1][1].setPiece(bptemp1, PieceType.PAWN, PieceColor.BLACK, "C:\\Users\\WIN-10\\TheChessGame\\src\\com\\YoelSiegel\\Images\\black_pawn.png");
+        getChessboard()[1][1].setPiece(bptemp1, PieceType.PAWN, PieceColor.BLACK, "src/com/YoelSiegel/Images/black_pawn.png");
         Pawn bptemp2 = new Pawn(PieceColor.BLACK, 1, 2);
         getChessboard()[1][2].setPiece(bptemp2, PieceType.PAWN, PieceColor.BLACK, "src/com/YoelSiegel/Images/black_pawn.png");
         Pawn bptemp3 = new Pawn(PieceColor.BLACK, 1, 3);
