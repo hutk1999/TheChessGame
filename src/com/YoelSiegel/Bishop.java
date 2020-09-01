@@ -13,6 +13,9 @@ public class Bishop extends Piece{
                 if (temp.gettile(getX() + i, getY() + i).isPieceOn()) {
                     if(temp.gettile(getX() + i, getY() + i).getPiece().getPieceColor()!=temp.gettile(getX(), getY()).getPiece().getPieceColor()){
                         temp.getChessboard()[getX()+i][getY()+i].setTheBackground(Color.GREEN);
+                        temp.getChessboard()[getX() + i][getY() + i].setAttackingx(getX());
+                        temp.getChessboard()[getX() + i][getY() + i].setAttackingy(getY());
+                        temp.getChessboard()[getX() + i][getY() + i].setInattack(true);
                         break;
                     }
                     else{
@@ -20,6 +23,9 @@ public class Bishop extends Piece{
                     }
                 }
                 temp.getChessboard()[getX()+i][getY()+i].setTheBackground(Color.GREEN);
+                temp.getChessboard()[getX() + i][getY() + i].setAttackingx(getX());
+                temp.getChessboard()[getX() + i][getY() + i].setAttackingy(getY());
+                temp.getChessboard()[getX() + i][getY() + i].setInattack(false);
             }
         }
         for (int i = 1; i < 8; i++) {
@@ -27,6 +33,9 @@ public class Bishop extends Piece{
                 if (temp.gettile(getX() - i, getY() - i).isPieceOn()) {
                     if(temp.gettile(getX() - i, getY() - i).getPiece().getPieceColor()!=temp.gettile(getX(), getY()).getPiece().getPieceColor()){
                         temp.getChessboard()[getX()-i][getY()-i].setTheBackground(Color.GREEN);
+                        temp.getChessboard()[getX() - i][getY() - i].setAttackingx(getX());
+                        temp.getChessboard()[getX() - i][getY() - i].setAttackingy(getY());
+                        temp.getChessboard()[getX() - i][getY() - i].setInattack(true);
                         break;
                     }
                     else{
@@ -34,6 +43,9 @@ public class Bishop extends Piece{
                     }
                 }
                 temp.getChessboard()[getX()-i][getY()-i].setTheBackground(Color.GREEN);
+                temp.getChessboard()[getX() - i][getY() - i].setAttackingx(getX());
+                temp.getChessboard()[getX() - i][getY() - i].setAttackingy(getY());
+                temp.getChessboard()[getX() - i][getY() - i].setInattack(false);
             }
         }
         for (int i = 1; i < 8; i++) {
@@ -41,6 +53,9 @@ public class Bishop extends Piece{
                 if (temp.gettile(getX() + i, getY() - i).isPieceOn()) {
                     if(temp.gettile(getX() + i, getY() - i).getPiece().getPieceColor()!=temp.gettile(getX(), getY()).getPiece().getPieceColor()){
                         temp.getChessboard()[getX()+i][getY()-i].setTheBackground(Color.GREEN);
+                        temp.getChessboard()[getX() + i][getY() - i].setAttackingx(getX());
+                        temp.getChessboard()[getX() + i][getY() - i].setAttackingy(getY());
+                        temp.getChessboard()[getX() + i][getY() - i].setInattack(true);
                         break;
                     }
                     else{
@@ -48,6 +63,9 @@ public class Bishop extends Piece{
                     }
                 }
                 temp.getChessboard()[getX()+i][getY()-i].setTheBackground(Color.GREEN);
+                temp.getChessboard()[getX() + i][getY() - i].setAttackingx(getX());
+                temp.getChessboard()[getX() + i][getY() - i].setAttackingy(getY());
+                temp.getChessboard()[getX() + i][getY() - i].setInattack(false);
             }
         }
         for (int i = 1; i < 8; i++) {
@@ -55,6 +73,9 @@ public class Bishop extends Piece{
                 if (temp.gettile(getX() - i, getY() + i).isPieceOn()) {
                     if(temp.gettile(getX() - i, getY() + i).getPiece().getPieceColor()!=temp.gettile(getX(), getY()).getPiece().getPieceColor()){
                         temp.getChessboard()[getX()-i][getY()+i].setTheBackground(Color.GREEN);
+                        temp.getChessboard()[getX() - i][getY() + i].setAttackingx(getX());
+                        temp.getChessboard()[getX() - i][getY() + i].setAttackingy(getY());
+                        temp.getChessboard()[getX() - i][getY() + i].setInattack(true);
                         break;
                     }
                     else{
@@ -62,6 +83,9 @@ public class Bishop extends Piece{
                     }
                 }
                 temp.getChessboard()[getX()-i][getY()+i].setTheBackground(Color.GREEN);
+                temp.getChessboard()[getX() - i][getY() + i].setAttackingx(getX());
+                temp.getChessboard()[getX() - i][getY() + i].setAttackingy(getY());
+                temp.getChessboard()[getX() - i][getY() + i].setInattack(false);
             }
         }
 

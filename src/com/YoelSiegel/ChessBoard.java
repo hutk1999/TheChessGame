@@ -16,7 +16,7 @@ public class ChessBoard extends JFrame {
     public List<Piece> whiteList=new ArrayList<>();
     public ChessBoard() {
         this.setLayout(new BorderLayout());
-        this.setSize(1200, 800);
+        this.setSize(1200, 1000);
         this.setResizable(false);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
