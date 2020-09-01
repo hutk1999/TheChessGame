@@ -74,7 +74,7 @@ public class King extends Piece{
         }
         else {
             temp.getChessboard()[getX()][getY()-1].setTheBackground(Color.GREEN);
-            temp.getChessboard()[getX()[getY() - 1].setAttackingx(getX());
+            temp.getChessboard()[getX()][getY() - 1].setAttackingx(getX());
             temp.getChessboard()[getX()][getY() - 1].setAttackingy(getY());
             temp.getChessboard()[getX()][getY() - 1].setInattack(false);
         }
