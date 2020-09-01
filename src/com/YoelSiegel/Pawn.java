@@ -21,6 +21,7 @@ public class Pawn extends Piece{
         //if the one in front of it is empty make it green
         if(temp.getChessboard()[getX()+z][getY()].isPieceOn()!=true){
             temp.getChessboard()[getX()+z][getY()].setTheBackground(Color.green);
+        //    temp.getChessboard()[getX()+z][getY()].
         }
         //if the one diagonal left is empty then check if 2 diagonal is empty
         if(getY()>=6){}

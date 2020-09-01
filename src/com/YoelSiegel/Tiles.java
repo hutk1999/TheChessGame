@@ -19,6 +19,9 @@ public class Tiles extends JPanel {
     private PieceColor tileColor;
     private int x;
     private int y;
+    private int attackingx;
+    private int attackingy;
+    private boolean inattack;
     private BufferedImage image;
     private Color color;
     Border blackline = BorderFactory.createLineBorder(Color.black);
@@ -33,8 +36,23 @@ public class Tiles extends JPanel {
         addMouseListener(new mousy());
     }
 
+    public void setAttackingx(int x){
+        attackingx=x;
 
-    public void setPiece(Piece piece,PieceType pieceType, PieceColor pieceColor, String theString) throws IOException {
+    }
+    public void setAttackingy(int y){
+        attackingy=y;
+    }
+
+    public boolean isInattack() {
+        return inattack;
+    }
+
+    public void setInattack(boolean inattack) {
+        this.inattack = inattack;
+    }
+
+    public void setPiece(Piece piece, PieceType pieceType, PieceColor pieceColor, String theString) throws IOException {
         this.piece = piece;
         setPieceOn(true);
         this.piece.setType(pieceType);
@@ -124,7 +142,7 @@ class mousy extends MouseAdapter {
     @Override
     public void mousePressed(MouseEvent e) {
 
-        if(background==Color.green){
+        if((background==Color.green)&&(getPiece()!=null)){
 
         }
         else {

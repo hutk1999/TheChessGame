@@ -13,10 +13,17 @@ public class Knight extends Piece{
             if(temp.gettile(getX()+1, getY()+2).isPieceOn()){
                 if(temp.gettile(getX()+1, getY()+2).getPiece().getPieceColor()!=temp.gettile(getX(), getY()).getPiece().getPieceColor()){
                     temp.getChessboard()[getX() + 1][getY() + 2].setTheBackground(Color.GREEN);
+                    temp.getChessboard()[getX() + 1][getY() + 2].setAttackingx(getX());
+                    temp.getChessboard()[getX() + 1][getY() + 2].setAttackingy(getY());
+                    temp.getChessboard()[getX() + 1][getY() + 2].setInattack(true);
                 }
             }
             else{
                 temp.getChessboard()[getX() + 1][getY() + 2].setTheBackground(Color.GREEN);
+                temp.getChessboard()[getX() + 1][getY() + 2].setAttackingx(getX());
+                temp.getChessboard()[getX() + 1][getY() + 2].setAttackingy(getY());
+                temp.getChessboard()[getX() + 1][getY() + 2].setInattack(false);
+
             }
 
         }
