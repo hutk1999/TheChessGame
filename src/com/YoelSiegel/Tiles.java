@@ -228,7 +228,32 @@ public class Tiles extends JPanel {
     }
 
     public void attack(ChessBoard temp) {
+        Tiles attacker=temp.getChessboard()[attackingx][attackingy];
+        if(getPiece().getPieceColor()==PieceColor.WHITE){
+            temp.blackList.remove(getPiece());
+        }
+        else{
+            temp.whiteList.remove(getPiece());
+        }
+        image=null;
+        piece=attacker.piece;
+        image=attacker.image;
+        inattack=false;
+        isPieceOn=true;
+        tileColor=attacker.tileColor;
+        fileName=attacker.fileName;
+        ourTempBoard=attacker.ourTempBoard;
+        getPiece().setX(getLocationx());
+        getPiece().setY(getLocationy());
+        attacker.setPiece(null);
+        attacker.fileName=null;
+        attacker.image=null;
+        attacker.isPieceOn=false;
+        attacker.setTheBackground(attacker.color);
 
+        repaint();
+        attacker.repaint();
+        System.out.println(""+getX()+""+getY());
     }
 
     public int getLocationx() {

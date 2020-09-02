@@ -12,6 +12,9 @@ public class Bishop extends Piece{
             return;
         }
         for (int i = 1; i < 8; i++) {
+            if(!temp.getChessboard()[getX()][getY()].isPieceOn()){
+                return;
+            }
             if(betweenExclusive(getX()+i, 0, 8)&&betweenExclusive(getY()+i, 0, 8)){
                 if (temp.gettile(getX() + i, getY() + i).isPieceOn()) {
                     if(temp.gettile(getX() + i, getY() + i).getPiece().getPieceColor()!=temp.gettile(getX(), getY()).getPiece().getPieceColor()){
