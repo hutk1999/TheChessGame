@@ -9,6 +9,9 @@ public class Rook extends Piece {
     }
 
     public void getLegalMoves(ChessBoard temp) {
+        if(!temp.getChessboard()[getX()][getY()].isPieceOn()){
+            return;
+        }
         for (int i = 1; i < 8; i++) {
             if (betweenExclusive(getX() + i, 0, 8) && betweenExclusive(getY(), 0, 8)) {
                             if (temp.getChessboard()[getX() + i][getY()].isPieceOn()) {

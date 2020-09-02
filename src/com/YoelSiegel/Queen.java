@@ -7,6 +7,9 @@ public class Queen extends Piece{
         super(pieceColor, x, y, PieceType.QUEEN);
     }
     public void getLegalMoves(ChessBoard temp){
+        if(!temp.getChessboard()[getX()][getY()].isPieceOn()){
+            return;
+        }
         for (int i = 1; i < 8; i++) {
             if(betweenExclusive(getX()+i, 0, 8)&&betweenExclusive(getY()+i, 0, 8)){
                 if (temp.gettile(getX() + i, getY() + i).isPieceOn()) {

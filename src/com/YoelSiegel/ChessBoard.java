@@ -25,10 +25,10 @@ public class ChessBoard extends JFrame {
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
                 if(((i+j)%2)==0){
-                    chessboard[i][j]=new Tiles(PieceColor.WHITE ,Color.lightGray, this);
+                    chessboard[i][j]=new Tiles(PieceColor.WHITE ,Color.lightGray, this, i, j);
                 }
                 else{
-                    chessboard[i][j]=new Tiles(PieceColor.BLACK ,Color.DARK_GRAY, this);
+                    chessboard[i][j]=new Tiles(PieceColor.BLACK ,Color.DARK_GRAY, this, i, j);
                 }
                 gamePanel.add(chessboard[i][j]);
             }
@@ -57,7 +57,6 @@ public class ChessBoard extends JFrame {
     }
 */
     public void makeBoard() throws IOException {
-        /*
         Pawn bptemp0 = new Pawn(PieceColor.BLACK, 1, 0);
         getChessboard()[1][0].setPiece(bptemp0, PieceType.PAWN, PieceColor.BLACK, "src/com/YoelSiegel/Images/black_pawn.png");
         Pawn bptemp1 = new Pawn(PieceColor.BLACK, 1, 1);
@@ -90,7 +89,7 @@ public class ChessBoard extends JFrame {
         getChessboard()[6][6].setPiece(wptemp6, PieceType.PAWN, PieceColor.WHITE, "src/com/YoelSiegel/Images/white_pawn.png");
         Pawn wptemp7 = new Pawn(PieceColor.WHITE, 6, 7);
         getChessboard()[6][7].setPiece(wptemp7, PieceType.PAWN, PieceColor.WHITE, "src/com/YoelSiegel/Images/white_pawn.png");
- */       Bishop bbtemp0 = new Bishop(PieceColor.BLACK, 0, 2);
+        Bishop bbtemp0 = new Bishop(PieceColor.BLACK, 0, 2);
         getChessboard()[0][2].setPiece(bbtemp0, PieceType.BISHOP, PieceColor.BLACK,"src/com/YoelSiegel/Images/black_bishop.png");
         Bishop bbtemp1 = new Bishop(PieceColor.BLACK, 0, 5);
         getChessboard()[0][5].setPiece(bbtemp1, PieceType.BISHOP, PieceColor.BLACK, "src/com/YoelSiegel/Images/black_bishop.png");
@@ -124,5 +123,38 @@ public class ChessBoard extends JFrame {
         King wKtemp = new King(PieceColor.WHITE, 7, 4);
         getChessboard()[7][4].setPiece(wKtemp, PieceType.KING, PieceColor.WHITE, "src/com/YoelSiegel/Images/white_king.png");
         arrofKings[1]=getChessboard()[7][4].getPiece();
+        whiteList.add(wKtemp);
+        whiteList.add(wqtemp);
+        whiteList.add(wbtemp0);
+        whiteList.add(wbtemp1);
+        whiteList.add(wctemp0);
+        whiteList.add(wctemp1);
+        whiteList.add(wktemp0);
+        whiteList.add(wktemp1);
+        whiteList.add(wptemp0);
+        whiteList.add(wptemp1);
+        whiteList.add(wptemp2);
+        whiteList.add(wptemp3);
+        whiteList.add(wptemp4);
+        whiteList.add(wptemp5);
+        whiteList.add(wptemp6);
+        whiteList.add(wptemp7);
+
+        blackList.add(bKtemp);
+        blackList.add(bqtemp);
+        blackList.add(bbtemp0);
+        blackList.add(bbtemp1);
+        blackList.add(bctemp0);
+        blackList.add(bctemp1);
+        blackList.add(bktemp0);
+        blackList.add(bktemp1);
+        blackList.add(bptemp0);
+        blackList.add(bptemp1);
+        blackList.add(bptemp2);
+        blackList.add(bptemp3);
+        blackList.add(bptemp4);
+        blackList.add(bptemp5);
+        blackList.add(bptemp6);
+        blackList.add(bptemp7);
     }
 }

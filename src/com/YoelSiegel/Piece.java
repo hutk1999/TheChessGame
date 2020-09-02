@@ -18,7 +18,7 @@ public class Piece {
     public void getLegalMoves(ChessBoard temp){}
     public boolean isMoveLegal(ChessBoard temp, int x, int y, boolean realmove){ return false;}
 
-    public void evalMove(ChessBoard temp, int x, int y, boolean realmove){
+    /*public void evalMove(ChessBoard temp, int x, int y, boolean realmove){
         if (realmove) {
             if (temp.getChessboard()[x][y].isPieceOn()) {
                 attackPiece(temp, x, y);
@@ -26,9 +26,9 @@ public class Piece {
                 movePiece(temp, x, y);
             }
         }
-    }
+    }*/
 
-    public void movePiece(ChessBoard temp, int x, int y) {
+    /*public void movePiece(ChessBoard temp, int x, int y) {
         temp.getChessboard()[x][y] = temp.getChessboard()[getX()][getY()];
         //temp.getChessboard()[getX()][getY()] = new Tiles(false, null, temp.getChessboard()[getX()][getY()].getTileColor());
         temp.getChessboard()[x][y].setPieceOn(true);
@@ -53,7 +53,7 @@ public class Piece {
         setY(y);
 
 
-    }
+    }*/
 
 
     public int getX() {

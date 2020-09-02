@@ -8,7 +8,9 @@ public class Knight extends Piece{
     }
 
     public void getLegalMoves(ChessBoard temp){
-
+        if(!temp.getChessboard()[getX()][getY()].isPieceOn()){
+            return;
+        }
         if (betweenExclusive(getX() + 1, 0, 8)&& betweenExclusive(this.getY() + 2, 0, 8)) {
             if(temp.gettile(getX()+1, getY()+2).isPieceOn()){
                 if(temp.gettile(getX()+1, getY()+2).getPiece().getPieceColor()!=temp.gettile(getX(), getY()).getPiece().getPieceColor()){

@@ -11,6 +11,9 @@ public class Pawn extends Piece{
     public void getLegalMoves(ChessBoard temp){
         int z=0;
         //makes z=-1 is piece is white
+        if(!temp.getChessboard()[getX()][getY()].isPieceOn()){
+            return;
+        }
         if(temp.getChessboard()[getX()][getY()].getPiece().getPieceColor()==PieceColor.WHITE){
             z=(-1);
         }

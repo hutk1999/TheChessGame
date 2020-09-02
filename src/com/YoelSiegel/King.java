@@ -8,6 +8,9 @@ public class King extends Piece{
         super(ecolor, x, y, PieceType.KING);
     }
     public void getLegalMoves(ChessBoard temp){
+        if(!temp.getChessboard()[getX()][getY()].isPieceOn()){
+            return;
+        }
         System.out.println("in here");
         if(getX()==7){}
         else {
