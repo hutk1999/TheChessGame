@@ -1,5 +1,6 @@
 package com.YoelSiegel;
 
+import java.awt.*;
 import java.awt.image.BufferedImage;
 
 public class Piece {
@@ -54,6 +55,19 @@ public class Piece {
 
 
     }*/
+    public void setincaseofmove(int x,int y,ChessBoard temp){
+            temp.getChessboard()[x][y].setTheBackground(Color.GREEN);
+            temp.getChessboard()[x][y].setAttackingx(getX());
+            temp.getChessboard()[x][y].setAttackingy(getY());
+            temp.getChessboard()[x][y].setInattack(false);
+    }
+    public void setincaseofattack(int x,int y ,ChessBoard temp){
+        temp.getChessboard()[x][y].setTheBackground(Color.GREEN);
+        temp.getChessboard()[x][y].setAttackingx(getX());
+        temp.getChessboard()[x][y].setAttackingy(getY());
+        temp.getChessboard()[x][y].setInattack(true);
+
+    }
 
 
     public int getX() {

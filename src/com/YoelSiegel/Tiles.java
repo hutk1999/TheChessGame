@@ -13,6 +13,7 @@ import java.util.Iterator;
 
 
 public class Tiles extends JPanel {
+    private boolean justmoved;
     private boolean isPieceOn;
     private Piece piece;
     private ChessBoard ourTempBoard;
@@ -152,6 +153,7 @@ public class Tiles extends JPanel {
         @Override
         public void mousePressed(MouseEvent e) {
             background = getBackground();
+            System.out.println(justmoved);
             if (background == Color.green) {
                 //we are gonna move the piece
                 if (inattack) {
@@ -165,11 +167,13 @@ public class Tiles extends JPanel {
                 //if there is we move it back and send a alert that there is a check
                 // after every turn we check to see if the other guy is in check and make a alert that there is a check
                 //we also need a turn function number
-            } else {
+            }
+            else {
                 for (int i = 0; i < 8; i++) {
                     for (int j = 0; j < 8; j++) {
                         if (ourTempBoard.getChessboard()[i][j].getBackground() == Color.green) {
                             ourTempBoard.getChessboard()[i][j].setBackground(ourTempBoard.getChessboard()[i][j].color);
+
                         }
                     }
                 }
@@ -203,8 +207,9 @@ public class Tiles extends JPanel {
 
         @Override
         public void mouseExited(MouseEvent e) {
+            if(((getPiece()!=null)&&(!inattack))){
             setBackground(color);
-            repaint();
+            repaint();}
         }
     }
 
