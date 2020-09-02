@@ -156,8 +156,10 @@ public class Tiles extends JPanel {
                 //we are gonna move the piece
                 if (inattack) {
                     attack(ourTempBoard);
+                    setTheBackground(color);
                 } else {
                     movepiece(ourTempBoard);
+                    setTheBackground(color);
                 }
                 //then we check if there is a check
                 //if there is we move it back and send a alert that there is a check
@@ -187,7 +189,7 @@ public class Tiles extends JPanel {
 
         @Override
         public void mouseReleased(MouseEvent e) {
-            setBackground(background);
+            setBackground(color);
             repaint();
 
         }
@@ -201,7 +203,7 @@ public class Tiles extends JPanel {
 
         @Override
         public void mouseExited(MouseEvent e) {
-            setBackground(backbound);
+            setBackground(color);
             repaint();
         }
     }
@@ -222,6 +224,13 @@ public class Tiles extends JPanel {
         attacker.image=null;
         attacker.isPieceOn=false;
         attacker.setTheBackground(attacker.color);
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                if (ourTempBoard.getChessboard()[i][j].getBackground() == Color.green) {
+                    ourTempBoard.getChessboard()[i][j].setBackground(ourTempBoard.getChessboard()[i][j].color);
+                }
+            }
+        }
         repaint();
         attacker.repaint();
         System.out.println(""+getX()+""+getY());
@@ -229,7 +238,8 @@ public class Tiles extends JPanel {
 
     public void attack(ChessBoard temp) {
         Tiles attacker=temp.getChessboard()[attackingx][attackingy];
-        if(getPiece().getPieceColor()==PieceColor.WHITE){
+        if(getPiece().getPieceColor()==PieceColor.WHITE)
+        {
             temp.blackList.remove(getPiece());
         }
         else{
@@ -250,6 +260,13 @@ public class Tiles extends JPanel {
         attacker.image=null;
         attacker.isPieceOn=false;
         attacker.setTheBackground(attacker.color);
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                if (ourTempBoard.getChessboard()[i][j].getBackground() == Color.green) {
+                    ourTempBoard.getChessboard()[i][j].setBackground(ourTempBoard.getChessboard()[i][j].color);
+                }
+            }
+        }
 
         repaint();
         attacker.repaint();

@@ -154,22 +154,22 @@ public class Queen extends Piece{
             }
         }
         for (int i = 1; i < 8; i++) {
-            if (betweenExclusive(getX() - i, 0, 8) && betweenExclusive(getY(), 0, 8)) {
-                if (temp.getChessboard()[getX() - i][getY()].isPieceOn()) {
-                    if (temp.getChessboard()[getX() - i][getY()].getPiece().getPieceColor() != getPieceColor()) {
-                        temp.getChessboard()[getX() - i][getY()].setTheBackground(Color.green);
-                        temp.getChessboard()[getX() - i][getY()].setInattack(true);
-                        temp.getChessboard()[getX() - i][getY()].setAttackingx(getX());
-                        temp.getChessboard()[getX() - i][getY()].setAttackingy(getY());
+            if (betweenExclusive(getX(), 0, 8) && betweenExclusive(getY()+i, 0, 8)) {
+                if (temp.getChessboard()[getX() ][getY()+i].isPieceOn()) {
+                    if (temp.getChessboard()[getX() ][getY()+i].getPiece().getPieceColor() != getPieceColor()) {
+                        temp.getChessboard()[getX() ][getY()+i].setTheBackground(Color.green);
+                        temp.getChessboard()[getX() ][getY()+i].setInattack(true);
+                        temp.getChessboard()[getX() ][getY()+i].setAttackingx(getX());
+                        temp.getChessboard()[getX() ][getY()+i].setAttackingy(getY());
                         break;
                     } else {
                         break;
                     }
                 } else {
-                    temp.getChessboard()[getX() - i][getY()].setTheBackground(Color.green);
-                    temp.getChessboard()[getX() - i][getY()].setInattack(false);
-                    temp.getChessboard()[getX() - i][getY()].setAttackingx(getX());
-                    temp.getChessboard()[getX() - i][getY()].setAttackingy(getY());
+                    temp.getChessboard()[getX()][getY()+i].setTheBackground(Color.green);
+                    temp.getChessboard()[getX()][getY()+i].setInattack(false);
+                    temp.getChessboard()[getX()][getY()+i].setAttackingx(getX());
+                    temp.getChessboard()[getX()][getY()+i].setAttackingy(getY());
                 }
             }
         }
