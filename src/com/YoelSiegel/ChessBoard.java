@@ -11,6 +11,8 @@ public class ChessBoard extends JFrame {
     private Tiles[][] chessboard=new Tiles[8][8];
     //makes array of our kings
     public Piece[] arrofKings=new Piece[2];
+    public boolean turn=true;
+    public boolean change=false;
     //makes array of all our pieces
     public java.util.List<Piece> blackList=new ArrayList<>();
     public List<Piece> whiteList=new ArrayList<>();

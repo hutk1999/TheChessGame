@@ -150,8 +150,26 @@ public class Tiles extends JPanel {
         private Color backbound;
 
 
+
         @Override
         public void mousePressed(MouseEvent e) {
+            if(isPieceOn()&&backbound!=Color.GREEN) {
+                if (ourTempBoard.turn) {
+                    if (getPiece().getPieceColor() == PieceColor.WHITE) {
+                        ourTempBoard.change=true;
+                    } else {
+                        return;
+                    }
+                }
+                else if (!ourTempBoard.turn) {
+                    if (getPiece().getPieceColor() == PieceColor.BLACK) {
+                        ourTempBoard.change=true;
+                    } else {
+                        return;
+                    }
+                }
+            }
+
             background = getBackground();
             System.out.println(justmoved);
             if (background == Color.green) {
@@ -159,9 +177,17 @@ public class Tiles extends JPanel {
                 if (inattack) {
                     attack(ourTempBoard);
                     setTheBackground(color);
+                    if(ourTempBoard.change){
+                        ourTempBoard.turn=!ourTempBoard.turn;
+                        ourTempBoard.change=false;
+                    }
                 } else {
                     movepiece(ourTempBoard);
                     setTheBackground(color);
+                    if(ourTempBoard.change){
+                        ourTempBoard.turn=!ourTempBoard.turn;
+                        ourTempBoard.change=false;
+                    }
                 }
                 updateboard();
                 //then we check if there is a check
@@ -172,8 +198,8 @@ public class Tiles extends JPanel {
 
 
 
-         else{
-         updateboard();
+         else {
+                updateboard();
                 if (piece == null) {
                     System.out.println("mis");
                     System.out.println("mis" + getX() + "" + getY());
@@ -183,6 +209,7 @@ public class Tiles extends JPanel {
                     getPiece().getLegalMoves(ourTempBoard);
                 }
             }
+
             repaint();
 
         }
