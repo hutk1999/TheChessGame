@@ -16,140 +16,92 @@ public class King extends Piece{
         else {
             if (temp.getChessboard()[getX() + 1][getY()].isPieceOn() == true) {
                 if (temp.getChessboard()[getX() + 1][getY()].getPiece().getPieceColor() != getPieceColor()) {
-                    temp.getChessboard()[getX() + 1][getY()].setTheBackground(Color.GREEN);
-                    temp.getChessboard()[getX() + 1][getY()].setAttackingx(getX());
-                    temp.getChessboard()[getX() + 1][getY()].setAttackingy(getY());
-                    temp.getChessboard()[getX() + 1][getY()].setInattack(true);
+                    setincaseofattack(getX()+1,getY(),temp);
                 }
 
             }
             else{
-                temp.getChessboard()[getX()+1][getY()].setTheBackground(Color.GREEN);
-                temp.getChessboard()[getX() + 1][getY()].setAttackingx(getX());
-                temp.getChessboard()[getX() + 1][getY()].setAttackingy(getY());
-                temp.getChessboard()[getX() + 1][getY()].setInattack(false);
+                setincaseofmove(getX()+1,getY(),temp);
             }
             if(getY()==7){}
             else{
         if(temp.getChessboard()[getX()+1][getY()+1].isPieceOn()==true){
             if(temp.getChessboard()[getX()+1][getY()+1].getPiece().getPieceColor()!=getPieceColor()){
-                temp.getChessboard()[getX()+1][getY()+1].setTheBackground(Color.GREEN);
-                temp.getChessboard()[getX() + 1][getY() + 1].setAttackingx(getX());
-                temp.getChessboard()[getX() + 1][getY() + 1].setAttackingy(getY());
-                temp.getChessboard()[getX() + 1][getY() + 1].setInattack(true);
+                setincaseofattack(getX()+1,getY()+1,temp);
             }
 
         }
         else{
-            temp.getChessboard()[getX()+1][getY()+1].setTheBackground(Color.GREEN);
-            temp.getChessboard()[getX() + 1][getY() + 1].setAttackingx(getX());
-            temp.getChessboard()[getX() + 1][getY() + 1].setAttackingy(getY());
-            temp.getChessboard()[getX() + 1][getY() + 1].setInattack(false);
+            setincaseofmove(getX()+1,getY()+1,temp);
         }}
             if(getY()==0){}
             else {
         if(temp.getChessboard()[getX()+1][getY()-1].isPieceOn()==true){
             if(temp.getChessboard()[getX()+1][getY()-1].getPiece().getPieceColor()!=getPieceColor()){
-                temp.getChessboard()[getX()+1][getY()-1].setTheBackground(Color.GREEN);
-                temp.getChessboard()[getX() + 1][getY() - 1].setAttackingx(getX());
-                temp.getChessboard()[getX() + 1][getY() - 1].setAttackingy(getY());
-                temp.getChessboard()[getX() + 1][getY() - 1].setInattack(true);
+                setincaseofattack(getX()+1,getY()-1,temp);
             }
 
         }
         else{
-            temp.getChessboard()[getX()+1][getY()-1].setTheBackground(Color.GREEN);
-            temp.getChessboard()[getX() + 1][getY() -1].setAttackingx(getX());
-            temp.getChessboard()[getX() + 1][getY() - 1].setAttackingy(getY());
-            temp.getChessboard()[getX() + 1][getY() - 1].setInattack(false);
+            setincaseofmove(getX()+1,getY()-1,temp);
         }}
         }
         if(getY()==0){}
         else{
         if(temp.getChessboard()[getX()][getY()-1].isPieceOn()==true){
             if(temp.getChessboard()[getX()][getY()-1].getPiece().getPieceColor()!=getPieceColor()){
-                temp.getChessboard()[getX()][getY()-1].setTheBackground(Color.GREEN);
-                temp.getChessboard()[getX()][getY() - 1].setAttackingx(getX());
-                temp.getChessboard()[getX()][getY() - 1].setAttackingy(getY());
-                temp.getChessboard()[getX()][getY() - 1].setInattack(true);
+                setincaseofattack(getX(),getY()-1,temp);
             }
 
         }
         else {
-            temp.getChessboard()[getX()][getY()-1].setTheBackground(Color.GREEN);
-            temp.getChessboard()[getX()][getY() - 1].setAttackingx(getX());
-            temp.getChessboard()[getX()][getY() - 1].setAttackingy(getY());
-            temp.getChessboard()[getX()][getY() - 1].setInattack(false);
+            setincaseofmove(getX(),getY()-1,temp);
         }
         }
         if(getY()==7){}
         else{
         if(temp.getChessboard()[getX()][getY()+1].isPieceOn()==true){
             if(temp.getChessboard()[getX()][getY()+1].getPiece().getPieceColor()!=getPieceColor()){
-                temp.getChessboard()[getX()][getY()+1].setTheBackground(Color.GREEN);
-                temp.getChessboard()[getX()][getY() + 1].setAttackingx(getX());
-                temp.getChessboard()[getX()][getY() + 1].setAttackingy(getY());
-                temp.getChessboard()[getX()][getY() + 1].setInattack(true);
+                setincaseofattack(getX(),getY()+1,temp);
             }
 
         }  else {
-            temp.getChessboard()[getX()][getY()+1].setTheBackground(Color.GREEN);
-            temp.getChessboard()[getX()][getY() + 1].setAttackingx(getX());
-            temp.getChessboard()[getX()][getY() + 1].setAttackingy(getY());
-            temp.getChessboard()[getX()][getY() + 1].setInattack(false);
+            setincaseofmove(getX(),getY()+1,temp);
         }
         }
         if(getX()==0){}
         else {
             if (temp.getChessboard()[getX() - 1][getY()].isPieceOn() == true) {
                 if (temp.getChessboard()[getX() - 1][getY()].getPiece().getPieceColor() != getPieceColor()) {
-                    temp.getChessboard()[getX() - 1][getY()].setTheBackground(Color.GREEN);
-                    temp.getChessboard()[getX() - 1][getY()].setAttackingx(getX());
-                    temp.getChessboard()[getX() - 1][getY()].setAttackingy(getY());
-                    temp.getChessboard()[getX() - 1][getY()].setInattack(true);
+                    setincaseofattack(getX()-1,getY(),temp);
                 }
 
             }
             else {
-                temp.getChessboard()[getX() - 1][getY()].setTheBackground(Color.GREEN);
-                temp.getChessboard()[getX() - 1][getY()].setAttackingx(getX());
-                temp.getChessboard()[getX() - 1][getY()].setAttackingy(getY());
-                temp.getChessboard()[getX() - 1][getY()].setInattack(false);
+                setincaseofmove(getX()-1,getY(),temp);
             }
             if(getY()==7){}
             else {
             if (temp.getChessboard()[getX() - 1][getY() + 1].isPieceOn() == true) {
                 if (temp.getChessboard()[getX() - 1][getY() + 1].getPiece().getPieceColor() != getPieceColor()) {
-                    temp.getChessboard()[getX() - 1][getY() + 1].setTheBackground(Color.GREEN);
-                    temp.getChessboard()[getX() - 1][getY() + 1].setAttackingx(getX());
-                    temp.getChessboard()[getX() - 1][getY() + 1].setAttackingy(getY());
-                    temp.getChessboard()[getX() - 1][getY() + 1].setInattack(true);
+                    setincaseofattack(getX()-1,getY()+1,temp);
                 }
 
             }
             else {
-                temp.getChessboard()[getX() - 1][getY() + 1].setTheBackground(Color.GREEN);
-                temp.getChessboard()[getX() - 1][getY() + 1].setAttackingx(getX());
-                temp.getChessboard()[getX() - 1][getY() + 1].setAttackingy(getY());
-                temp.getChessboard()[getX() - 1][getY() + 1].setInattack(false);
+                setincaseofmove(getX()-1,getY()+1,temp);
             }
             }
             if(getY()==0){}
             else {
                 if (temp.getChessboard()[getX() - 1][getY() - 1].isPieceOn() == true) {
                     if (temp.getChessboard()[getX() - 1][getY() - 1].getPiece().getPieceColor() != getPieceColor()) {
-                        temp.getChessboard()[getX() - 1][getY() - 1].setTheBackground(Color.GREEN);
-                        temp.getChessboard()[getX() - 1][getY() - 1].setAttackingx(getX());
-                        temp.getChessboard()[getX() - 1][getY() - 1].setAttackingy(getY());
-                        temp.getChessboard()[getX() - 1][getY() - 1].setInattack(true);
+                        setincaseofmove(getX()-1,getY()-1,temp);
                     }
 
                 }
                 else {
-                    temp.getChessboard()[getX() - 1][getY() - 1].setTheBackground(Color.GREEN);
-                    temp.getChessboard()[getX() - 1][getY() - 1].setAttackingx(getX());
-                    temp.getChessboard()[getX() - 1][getY() - 1].setAttackingy(getY());
-                    temp.getChessboard()[getX() - 1][getY() - 1].setInattack(false);
+                    setincaseofmove(getX()-1,getY()-1,temp);
                 }
             }
 

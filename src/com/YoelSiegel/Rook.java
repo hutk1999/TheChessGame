@@ -16,20 +16,14 @@ public class Rook extends Piece {
             if (betweenExclusive(getX() + i, 0, 8) && betweenExclusive(getY(), 0, 8)) {
                             if (temp.getChessboard()[getX() + i][getY()].isPieceOn()) {
                                 if (temp.getChessboard()[getX() + i][getY()].getPiece().getPieceColor() != getPieceColor()) {
-                                    temp.getChessboard()[getX() + i][getY()].setTheBackground(Color.green);
-                                    temp.getChessboard()[getX() + i][getY()].setInattack(true);
-                                    temp.getChessboard()[getX() + i][getY()].setAttackingx(getX());
-                                    temp.getChessboard()[getX() + i][getY()].setAttackingy(getY());
+                                    setincaseofattack(getX()+i,getY(),temp);
                                     break;
                                 } else {
                                     break;
                                 }
                             } else {
 
-                                temp.getChessboard()[getX() + i][getY()].setTheBackground(Color.green);
-                                temp.getChessboard()[getX() + i][getY()].setInattack(false);
-                                temp.getChessboard()[getX() + i][getY()].setAttackingx(getX());
-                                temp.getChessboard()[getX() + i][getY()].setAttackingy(getY());
+                                setincaseofmove(getX()+i,getY(),temp);
 
                             }
                         }
@@ -39,19 +33,13 @@ public class Rook extends Piece {
                     if (betweenExclusive(getX() - i, 0, 8) && betweenExclusive(getY(), 0, 8)) {
                         if (temp.getChessboard()[getX() - i][getY()].isPieceOn()) {
                             if (temp.getChessboard()[getX() - i][getY()].getPiece().getPieceColor() != getPieceColor()) {
-                                temp.getChessboard()[getX() - i][getY()].setTheBackground(Color.green);
-                                temp.getChessboard()[getX() - i][getY()].setInattack(true);
-                                temp.getChessboard()[getX() - i][getY()].setAttackingx(getX());
-                                temp.getChessboard()[getX() - i][getY()].setAttackingy(getY());
+                                setincaseofattack(getX()-i,getY(),temp);
                                 break;
                             } else {
                                 break;
                             }
                         } else {
-                            temp.getChessboard()[getX() - i][getY()].setTheBackground(Color.green);
-                            temp.getChessboard()[getX() - i][getY()].setInattack(false);
-                            temp.getChessboard()[getX() - i][getY()].setAttackingx(getX());
-                            temp.getChessboard()[getX() - i][getY()].setAttackingy(getY());
+                            setincaseofmove(getX()-i,getY(),temp);
                         }
                     }
                 }
@@ -59,19 +47,13 @@ public class Rook extends Piece {
                     if (betweenExclusive(getX(), 0, 8) && betweenExclusive(getY() - i, 0, 8)) {
                         if (temp.getChessboard()[getX()][getY() - i].isPieceOn()) {
                             if (temp.getChessboard()[getX()][getY() - i].getPiece().getPieceColor() != getPieceColor()) {
-                                temp.getChessboard()[getX()][getY() - i].setTheBackground(Color.green);
-                                temp.getChessboard()[getX()][getY() - i].setInattack(true);
-                                temp.getChessboard()[getX()][getY() - i].setAttackingx(getX());
-                                temp.getChessboard()[getX()][getY() - i].setAttackingy(getY());
+                                setincaseofattack(getX(),getY()-i,temp);
                                 break;
                             } else {
                                 break;
                             }
                         } else {
-                            temp.getChessboard()[getX()][getY() - i].setTheBackground(Color.green);
-                            temp.getChessboard()[getX()][getY() - i].setInattack(false);
-                            temp.getChessboard()[getX()][getY() - i].setAttackingx(getX());
-                            temp.getChessboard()[getX()][getY() - i].setAttackingy(getY());
+                            setincaseofmove(getX(),getY()-i,temp);
                         }
                     }
                 }
@@ -79,19 +61,13 @@ public class Rook extends Piece {
                     if (betweenExclusive(getX(), 0, 8) && betweenExclusive(getY()+i, 0, 8)) {
                         if (temp.getChessboard()[getX() ][getY()+i].isPieceOn()) {
                             if (temp.getChessboard()[getX() ][getY()+i].getPiece().getPieceColor() != getPieceColor()) {
-                                temp.getChessboard()[getX() ][getY()+i].setTheBackground(Color.green);
-                                temp.getChessboard()[getX() ][getY()+i].setInattack(true);
-                                temp.getChessboard()[getX() ][getY()+i].setAttackingx(getX());
-                                temp.getChessboard()[getX() ][getY()+i].setAttackingy(getY());
+                             setincaseofattack(getX(),getY()+i,temp);
                                 break;
                             } else {
                                 break;
                             }
                         } else {
-                            temp.getChessboard()[getX()][getY()+i].setTheBackground(Color.green);
-                            temp.getChessboard()[getX()][getY()+i].setInattack(false);
-                            temp.getChessboard()[getX()][getY()+i].setAttackingx(getX());
-                            temp.getChessboard()[getX()][getY()+i].setAttackingy(getY());
+                            setincaseofmove(getX(),getY()+i,temp);
                         }
                     }
                 }
