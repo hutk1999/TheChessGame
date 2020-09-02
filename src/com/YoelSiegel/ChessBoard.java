@@ -51,11 +51,7 @@ public class ChessBoard extends JFrame {
     public Tiles gettile(int i, int j) {
         return getChessboard()[i][j];
     }
-/*
-    public void setChessboard(Tiles[][] chessboard) {
-        this.chessboard = chessboard;
-    }
-*/
+
     public void makeBoard() throws IOException {
         Pawn bptemp0 = new Pawn(PieceColor.BLACK, 1, 0);
         getChessboard()[1][0].setPiece(bptemp0, PieceType.PAWN, PieceColor.BLACK, "src/com/YoelSiegel/Images/black_pawn.png");

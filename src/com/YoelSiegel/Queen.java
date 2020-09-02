@@ -1,7 +1,5 @@
 package com.YoelSiegel;
-
 import java.awt.*;
-
 public class Queen extends Piece{
     public Queen(PieceColor pieceColor, int x, int y) {
         super(pieceColor, x, y, PieceType.QUEEN);
@@ -20,13 +18,10 @@ public class Queen extends Piece{
                         break;
                     }
                 } else {
-
                     setincaseofmove(getX()+i,getY(),temp);
-
                 }
             }
         }
-
         for (int i = 1; i < 8; i++) {
             if (betweenExclusive(getX() - i, 0, 8) && betweenExclusive(getY(), 0, 8)) {
                 if (temp.getChessboard()[getX() - i][getY()].isPieceOn()) {
@@ -128,13 +123,10 @@ public class Queen extends Piece{
                 setincaseofmove(getX()-i,getY()+i,temp);
             }
         }
-
     }
-
     public static boolean betweenExclusive(int x, int min, int max) {
         return x>=min && x<max;
     }
-
 }
 
 

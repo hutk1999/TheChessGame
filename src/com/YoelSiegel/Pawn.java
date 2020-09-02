@@ -43,7 +43,6 @@ public class Pawn extends Piece{
                 }
                 if (getY() == 0) {
                 } else {
-                    //if one diaganol right is empty then check if 2 diagonal is empty
                     if (temp.getChessboard()[getX() + 1][getY() - 1].getPiece() != null) {
                         if (temp.getChessboard()[getX() + 1][getY() - 1].getPiece().getPieceColor() != getPieceColor()) {
                          setincaseofattack(getX()+1,getY()-1,temp);
@@ -58,7 +57,9 @@ public class Pawn extends Piece{
                 if (getY() == 7) {
                 } else {
                     if (temp.getChessboard()[getX() - 1][getY() + 1].getPiece() != null) {
-                        setincaseofattack(getX()-1,getY()+1,temp);
+                        if(temp.getChessboard()[getX()-1][getY()+1].getPiece().getPieceColor()!=getPieceColor()) {
+                            setincaseofattack(getX() - 1, getY() + 1, temp);
+                        }
                 }
                 if (getY() ==0) {
                 } else {

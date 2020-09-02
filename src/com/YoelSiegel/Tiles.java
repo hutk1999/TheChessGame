@@ -163,29 +163,25 @@ public class Tiles extends JPanel {
                     movepiece(ourTempBoard);
                     setTheBackground(color);
                 }
+                updateboard();
                 //then we check if there is a check
                 //if there is we move it back and send a alert that there is a check
                 // after every turn we check to see if the other guy is in check and make a alert that there is a check
                 //we also need a turn function number
             }
-            else {
-                for (int i = 0; i < 8; i++) {
-                    for (int j = 0; j < 8; j++) {
-                        if (ourTempBoard.getChessboard()[i][j].getBackground() == Color.green) {
-                            ourTempBoard.getChessboard()[i][j].setBackground(ourTempBoard.getChessboard()[i][j].color);
 
-                        }
-                    }
+
+
+         else{
+         updateboard();
+                if (piece == null) {
+                    System.out.println("mis");
+                    System.out.println("mis" + getX() + "" + getY());
+                } else {
+                    System.out.println("hit" + getPiece().getX() + "" + getPiece().getY());
+                    System.out.println("hit" + getX() + "" + getY());
+                    getPiece().getLegalMoves(ourTempBoard);
                 }
-            }
-
-            if (piece == null) {
-                System.out.println("mis");
-                System.out.println("mis"+getX()+""+getY());
-            } else {
-                System.out.println("hit"+getPiece().getX()+""+getPiece().getY());
-                System.out.println("hit"+getX()+""+getY());
-                getPiece().getLegalMoves(ourTempBoard);
             }
             repaint();
 
@@ -229,13 +225,7 @@ public class Tiles extends JPanel {
         attacker.image=null;
         attacker.isPieceOn=false;
         attacker.setTheBackground(attacker.color);
-        for (int i = 0; i < 8; i++) {
-            for (int j = 0; j < 8; j++) {
-                if (ourTempBoard.getChessboard()[i][j].getBackground() == Color.green) {
-                    ourTempBoard.getChessboard()[i][j].setBackground(ourTempBoard.getChessboard()[i][j].color);
-                }
-            }
-        }
+        updateboard();
         repaint();
         attacker.repaint();
         System.out.println(""+getX()+""+getY());
@@ -265,14 +255,7 @@ public class Tiles extends JPanel {
         attacker.image=null;
         attacker.isPieceOn=false;
         attacker.setTheBackground(attacker.color);
-        for (int i = 0; i < 8; i++) {
-            for (int j = 0; j < 8; j++) {
-                if (ourTempBoard.getChessboard()[i][j].getBackground() == Color.green) {
-                    ourTempBoard.getChessboard()[i][j].setBackground(ourTempBoard.getChessboard()[i][j].color);
-                }
-            }
-        }
-
+        updateboard();
         repaint();
         attacker.repaint();
         System.out.println(""+getX()+""+getY());
@@ -292,6 +275,16 @@ public class Tiles extends JPanel {
 
     public void setLocationy(int locationy) {
         this.locationy = locationy;
+    }
+    public void updateboard(){
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                if (ourTempBoard.getChessboard()[i][j].getBackground() == Color.green) {
+                    ourTempBoard.getChessboard()[i][j].setBackground(ourTempBoard.getChessboard()[i][j].color);
+
+                }
+            }
+        }
     }
 }
 
