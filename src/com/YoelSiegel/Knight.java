@@ -14,17 +14,11 @@ public class Knight extends Piece{
         if (betweenExclusive(getX() + 1, 0, 8)&& betweenExclusive(this.getY() + 2, 0, 8)) {
             if(temp.gettile(getX()+1, getY()+2).isPieceOn()){
                 if(temp.gettile(getX()+1, getY()+2).getPiece().getPieceColor()!=temp.gettile(getX(), getY()).getPiece().getPieceColor()){
-                    temp.getChessboard()[getX() + 1][getY() + 2].setTheBackground(Color.GREEN);
-                    temp.getChessboard()[getX() + 1][getY() + 2].setAttackingx(getX());
-                    temp.getChessboard()[getX() + 1][getY() + 2].setAttackingy(getY());
-                    temp.getChessboard()[getX() + 1][getY() + 2].setInattack(true);
+                    setincaseofattack(getX()+1,getY()+2,temp);
                 }
             }
             else{
-                temp.getChessboard()[getX() + 1][getY() + 2].setTheBackground(Color.GREEN);
-                temp.getChessboard()[getX() + 1][getY() + 2].setAttackingx(getX());
-                temp.getChessboard()[getX() + 1][getY() + 2].setAttackingy(getY());
-                temp.getChessboard()[getX() + 1][getY() + 2].setInattack(false);
+                setincaseofmove(getX()+1,getY()+2,temp);
 
             }
 
@@ -32,113 +26,71 @@ public class Knight extends Piece{
         if (betweenExclusive(getX() + 2, 0, 8)&& betweenExclusive(this.getY() + 1, 0, 8)) {
             if(temp.gettile(getX()+2, getY()+1).isPieceOn()){
                 if(temp.gettile(getX()+2, getY()+1).getPiece().getPieceColor()!=temp.gettile(getX(), getY()).getPiece().getPieceColor()){
-                    temp.getChessboard()[getX() + 2][getY() + 1].setTheBackground(Color.GREEN);
-                    temp.getChessboard()[getX() + 2][getY() + 1].setAttackingx(getX());
-                    temp.getChessboard()[getX() + 2][getY() + 1].setAttackingy(getY());
-                    temp.getChessboard()[getX() + 2][getY() + 1].setInattack(true);
+                    setincaseofattack(getX()+2,getY()+1,temp);
                 }
             }
             else{
-                temp.getChessboard()[getX() + 2][getY() + 1].setTheBackground(Color.GREEN);
-                temp.getChessboard()[getX() + 2][getY() + 1].setAttackingx(getX());
-                temp.getChessboard()[getX() + 2][getY() + 1].setAttackingy(getY());
-                temp.getChessboard()[getX() + 2][getY() + 1].setInattack(false);
+                setincaseofmove(getX()+2,getY()+1,temp);
             }
         }
         if (betweenExclusive(getX() -1, 0, 8)&& betweenExclusive(this.getY() -2, 0, 8)) {
             if(temp.gettile(getX()-1, getY()-2).isPieceOn()){
                 if(temp.gettile(getX()-1, getY()-2).getPiece().getPieceColor()!=temp.gettile(getX(), getY()).getPiece().getPieceColor()){
-                    temp.getChessboard()[getX() - 1][getY() - 2].setTheBackground(Color.GREEN);
-                    temp.getChessboard()[getX() - 1][getY() - 2].setAttackingx(getX());
-                    temp.getChessboard()[getX() - 1][getY() - 2].setAttackingy(getY());
-                    temp.getChessboard()[getX() - 1][getY() - 2].setInattack(true);
+                    setincaseofattack(getX()-1,getY()-2,temp);
                 }
             }
             else{
-                temp.getChessboard()[getX() - 1][getY() - 2].setTheBackground(Color.GREEN);
-                temp.getChessboard()[getX() - 1][getY() - 2].setAttackingx(getX());
-                temp.getChessboard()[getX() - 1][getY() - 2].setAttackingy(getY());
-                temp.getChessboard()[getX() - 1][getY() - 2].setInattack(false);
+                setincaseofmove(getX()-1,getY()-2,temp);
             }
         }
         if (betweenExclusive(getX() - 2, 0, 8)&& betweenExclusive(this.getY() - 1, 0, 8)) {
             if(temp.gettile(getX()-2, getY()-1).isPieceOn()){
                 if(temp.gettile(getX()-2, getY()-1).getPiece().getPieceColor()!=temp.gettile(getX(), getY()).getPiece().getPieceColor()){
-                    temp.getChessboard()[getX() -2][getY() -1].setTheBackground(Color.GREEN);
-                    temp.getChessboard()[getX() - 2][getY() - 1].setAttackingx(getX());
-                    temp.getChessboard()[getX() - 2][getY() - 1].setAttackingy(getY());
-                    temp.getChessboard()[getX() - 2][getY() - 1].setInattack(true);
+                    setincaseofattack(getX()-2,getY()-1,temp);
                 }
             }
             else{
-                temp.getChessboard()[getX() -2][getY() -1].setTheBackground(Color.GREEN);
-                temp.getChessboard()[getX() - 2][getY() - 1].setAttackingx(getX());
-                temp.getChessboard()[getX() - 2][getY() - 1].setAttackingy(getY());
-                temp.getChessboard()[getX() - 2][getY() - 1].setInattack(false);
+                setincaseofmove(getX()-2,getY()-1,temp);
             }
         }
         if (betweenExclusive(getX() + 1, 0, 8)&& betweenExclusive(this.getY() -2, 0, 8)) {
             if(temp.gettile(getX()+1, getY()-2).isPieceOn()){
                 if(temp.gettile(getX()+1, getY()-2).getPiece().getPieceColor()!=temp.gettile(getX(), getY()).getPiece().getPieceColor()){
-                    temp.getChessboard()[getX() + 1][getY() -2].setTheBackground(Color.GREEN);
-                    temp.getChessboard()[getX() + 1][getY() - 2].setAttackingx(getX());
-                    temp.getChessboard()[getX() + 1][getY() - 2].setAttackingy(getY());
-                    temp.getChessboard()[getX() + 1][getY() - 2].setInattack(true);
+                    setincaseofattack(getX()+1,getY()-2,temp);
                 }
             }
             else{
-                temp.getChessboard()[getX() + 1][getY() -2].setTheBackground(Color.GREEN);
-                temp.getChessboard()[getX() + 1][getY() - 2].setAttackingx(getX());
-                temp.getChessboard()[getX() + 1][getY() - 2].setAttackingy(getY());
-                temp.getChessboard()[getX() + 1][getY() - 2].setInattack(false);
+                setincaseofmove(getX()+1,getY()-2,temp);
             }
         }
         if (betweenExclusive(getX() + 2, 0, 8)&& betweenExclusive(this.getY() - 1, 0, 8)) {
             if(temp.gettile(getX()+2, getY()-1).isPieceOn()){
                 if(temp.gettile(getX()+2, getY()-1).getPiece().getPieceColor()!=temp.gettile(getX(), getY()).getPiece().getPieceColor()){
-                    temp.getChessboard()[getX() + 2][getY() -1].setTheBackground(Color.GREEN);
-                    temp.getChessboard()[getX() + 2][getY() - 1].setAttackingx(getX());
-                    temp.getChessboard()[getX() + 2][getY() - 1].setAttackingy(getY());
-                    temp.getChessboard()[getX() + 2][getY() - 1].setInattack(true);
+                    setincaseofattack(getX()+2,getY()-1,temp);
                 }
             }
             else{
-                temp.getChessboard()[getX() + 2][getY() -1].setTheBackground(Color.GREEN);
-                temp.getChessboard()[getX() + 2][getY() - 1].setAttackingx(getX());
-                temp.getChessboard()[getX() + 2][getY() - 1].setAttackingy(getY());
-                temp.getChessboard()[getX() + 2][getY() - 1].setInattack(false);
+                setincaseofmove(getX()+2,getY()-1,temp);
             }
         }
         if (betweenExclusive(getX() - 1, 0, 8)&& betweenExclusive(this.getY() + 2, 0, 8)) {
             if(temp.gettile(getX()-1, getY()+2).isPieceOn()){
                 if(temp.gettile(getX()-1, getY()+2).getPiece().getPieceColor()!=temp.gettile(getX(), getY()).getPiece().getPieceColor()){
-                    temp.getChessboard()[getX() - 1][getY() + 2].setTheBackground(Color.GREEN);
-                    temp.getChessboard()[getX() - 1][getY() + 2].setAttackingx(getX());
-                    temp.getChessboard()[getX() - 1][getY() + 2].setAttackingy(getY());
-                    temp.getChessboard()[getX() - 1][getY() + 2].setInattack(true);
+                    setincaseofattack(getX()-1,getY()+2,temp);
                 }
             }
             else{
-                temp.getChessboard()[getX() - 1][getY() + 2].setTheBackground(Color.GREEN);
-                temp.getChessboard()[getX() - 1][getY() + 2].setAttackingx(getX());
-                temp.getChessboard()[getX() - 1][getY() + 2].setAttackingy(getY());
-                temp.getChessboard()[getX() - 1][getY() + 2].setInattack(false);
+                setincaseofmove(getX()-1,getY()+2,temp);
             }
         }
         if (betweenExclusive(getX() - 2, 0, 8)&& betweenExclusive(this.getY() + 1, 0, 8)) {
             if(temp.gettile(getX()-2, getY()+1).isPieceOn()){
                 if(temp.gettile(getX()-2, getY()+1).getPiece().getPieceColor()!=temp.gettile(getX(), getY()).getPiece().getPieceColor()){
-                    temp.getChessboard()[getX() -2][getY() + 1].setTheBackground(Color.GREEN);
-                    temp.getChessboard()[getX() - 2][getY() + 1].setAttackingx(getX());
-                    temp.getChessboard()[getX() - 2][getY() + 1].setAttackingy(getY());
-                    temp.getChessboard()[getX() - 2][getY() + 1].setInattack(true);
+                    setincaseofattack(getX()-2,getY()+1,temp);
                 }
             }
             else{
-                temp.getChessboard()[getX() -2][getY() + 1].setTheBackground(Color.GREEN);
-                temp.getChessboard()[getX() - 2][getY() + 1].setAttackingx(getX());
-                temp.getChessboard()[getX() - 2][getY() + 1].setAttackingy(getY());
-                temp.getChessboard()[getX() - 2][getY() + 1].setInattack(false);
+                setincaseofmove(getX()-2,getY()+1,temp);
             }
         }
     }
