@@ -24,6 +24,11 @@ public class ChessBoard extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         gamePanel.setPreferredSize(new Dimension(800, 1000));
         gamePanel.setLayout(new GridLayout(8, 8));
+        setTiles();
+        this.add(gamePanel);
+        this.setVisible(true);
+    }
+    public void setTiles(){
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
                 if(((i+j)%2)==0){
@@ -37,8 +42,6 @@ public class ChessBoard extends JFrame {
             }
         }
 
-        this.add(gamePanel);
-        this.setVisible(true);
     }
 
     /*public static JPanel getGamePanel() {
@@ -57,7 +60,7 @@ public class ChessBoard extends JFrame {
     }
 
     public void makeBoard() throws IOException {
-      /*  Pawn bptemp0 = new Pawn(PieceColor.BLACK, 1, 0);
+        Pawn bptemp0 = new Pawn(PieceColor.BLACK, 1, 0);
         getChessboard()[1][0].setPiece(bptemp0, PieceType.PAWN, PieceColor.BLACK, "src/com/YoelSiegel/Images/black_pawn.png");
         Pawn bptemp1 = new Pawn(PieceColor.BLACK, 1, 1);
         getChessboard()[1][1].setPiece(bptemp1, PieceType.PAWN, PieceColor.BLACK, "src/com/YoelSiegel/Images/black_pawn.png");
@@ -87,7 +90,7 @@ public class ChessBoard extends JFrame {
         getChessboard()[6][5].setPiece(wptemp5, PieceType.PAWN, PieceColor.WHITE, "src/com/YoelSiegel/Images/white_pawn.png");
         Pawn wptemp6 = new Pawn(PieceColor.WHITE, 6, 6);
         getChessboard()[6][6].setPiece(wptemp6, PieceType.PAWN, PieceColor.WHITE, "src/com/YoelSiegel/Images/white_pawn.png");
-       */ Pawn wptemp7 = new Pawn(PieceColor.WHITE, 6, 7);
+        Pawn wptemp7 = new Pawn(PieceColor.WHITE, 6, 7);
         getChessboard()[6][7].setPiece(wptemp7, PieceType.PAWN, PieceColor.WHITE, "src/com/YoelSiegel/Images/white_pawn.png");
         Bishop bbtemp0 = new Bishop(PieceColor.BLACK, 0, 2);
         getChessboard()[0][2].setPiece(bbtemp0, PieceType.BISHOP, PieceColor.BLACK,"src/com/YoelSiegel/Images/black_bishop.png");
@@ -131,7 +134,7 @@ public class ChessBoard extends JFrame {
         whiteList.add(wctemp1);
         whiteList.add(wktemp0);
         whiteList.add(wktemp1);
-      /*  whiteList.add(wptemp0);
+        whiteList.add(wptemp0);
         whiteList.add(wptemp1);
         whiteList.add(wptemp2);
         whiteList.add(wptemp3);
@@ -139,7 +142,7 @@ public class ChessBoard extends JFrame {
         whiteList.add(wptemp5);
         whiteList.add(wptemp6);
         whiteList.add(wptemp7);
-*/
+
         blackList.add(bKtemp);
         blackList.add(bqtemp);
         blackList.add(bbtemp0);
@@ -147,7 +150,7 @@ public class ChessBoard extends JFrame {
         blackList.add(bctemp0);
         blackList.add(bctemp1);
         blackList.add(bktemp0);
-        blackList.add(bktemp1);/*
+        blackList.add(bktemp1);
         blackList.add(bptemp0);
         blackList.add(bptemp1);
         blackList.add(bptemp2);
@@ -155,6 +158,6 @@ public class ChessBoard extends JFrame {
         blackList.add(bptemp4);
         blackList.add(bptemp5);
         blackList.add(bptemp6);
-        blackList.add(bptemp7);*/
+        blackList.add(bptemp7);
     }
 }

@@ -367,7 +367,7 @@ public class Tiles extends JPanel {
                 //make code that checks if we are attacked
             }
         }
-    return true;
+    return false;
     }
 }
 
