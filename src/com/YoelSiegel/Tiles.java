@@ -73,7 +73,7 @@ public class Tiles extends JPanel {
         this.piece.setType(pieceType);
         this.piece.setPieceColor(pieceColor);
         setBackground(color);
-        this.piece.setFilenamey(theString);
+        this.piece.setTheFileName(theString);
         try {
             BufferedImage tempimage = ImageIO.read(new File(theString));
             BufferedImage tempImage2 = resize(tempimage, 50, 50);
@@ -208,7 +208,7 @@ public class Tiles extends JPanel {
 
                 if(isthereacheck()) {
                    System.out.println("in here");
-
+                    ourTempBoard.turn=!ourTempBoard.turn;
 
                     if(getPiece()!=null) {
                         getPiece().setX(getLocationx());
@@ -222,8 +222,8 @@ public class Tiles extends JPanel {
                     System.out.println("in the place i want look one line down");
                     if(ourpiece!=null) {
                         try {
-                            System.out.println(ourpiece.getFilenamey());
-                            ourTempBoard.getChessboard()[getLocationx()][getLocationy()].setPiece(ourpiece,ourpiece.getType(),ourpiece.getPieceColor(),ourpiece.getFilenamey());
+                            System.out.println(ourpiece.gettheFileName());
+                            ourTempBoard.getChessboard()[getLocationx()][getLocationy()].setPiece(ourpiece,ourpiece.getType(),ourpiece.getPieceColor(),ourpiece.gettheFileName());
                         } catch (IOException ex) {
                             ex.printStackTrace();
                         }
