@@ -231,11 +231,12 @@ public class Tiles extends JPanel {
                     updateboard();
                     repaint();
                     System.out.println(""+getX()+""+getY());
-
-                    if (ourpiece.getPieceColor() == PieceColor.BLACK) {
-                        ourTempBoard.blackList.add(ourpiece);
-                    } else {
-                        ourTempBoard.whiteList.add(ourpiece);
+                    if(ourpiece!=null) {
+                        if (ourpiece.getPieceColor() == PieceColor.BLACK) {
+                            ourTempBoard.blackList.add(ourpiece);
+                        } else {
+                            ourTempBoard.whiteList.add(ourpiece);
+                        }
                     }
 
                 }}
