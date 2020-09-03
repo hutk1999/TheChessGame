@@ -9,13 +9,24 @@ public class Piece {
     private PieceColor pieceColor;
     private PieceType type;
     public BufferedImage image;
+    private String filenamey;
 
     public Piece(PieceColor pieceColor, int x, int y,PieceType type){
         this.type = type;
         this.pieceColor = pieceColor;
         this.x = x;
         this.y = y;
+        this.filenamey=filenamey;
     }
+
+    public String getFilenamey() {
+        return filenamey;
+    }
+
+    public void setFilenamey(String filenamey) {
+        this.filenamey = filenamey;
+    }
+
     public void getLegalMoves(ChessBoard temp){}
     public boolean isMoveLegal(ChessBoard temp, int x, int y, boolean realmove){ return false;}
 

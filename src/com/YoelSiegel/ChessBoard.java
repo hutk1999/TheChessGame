@@ -33,8 +33,10 @@ public class ChessBoard extends JFrame {
                     chessboard[i][j]=new Tiles(PieceColor.BLACK ,Color.DARK_GRAY, this, i, j);
                 }
                 gamePanel.add(chessboard[i][j]);
+
             }
         }
+
         this.add(gamePanel);
         this.setVisible(true);
     }

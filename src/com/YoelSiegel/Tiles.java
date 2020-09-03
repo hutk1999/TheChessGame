@@ -28,6 +28,14 @@ public class Tiles extends JPanel {
     private String fileName;
     Border blackline = BorderFactory.createLineBorder(Color.black, 5);
 
+    public String getFileName() {
+        return fileName;
+    }
+
+    public Border getBlackline() {
+        return blackline;
+    }
+
     public Tiles(PieceColor tileColor, Color mycolor, ChessBoard temp, int locationx, int locationy) {
         this.locationx=locationx;
         this.locationy=locationy;
@@ -65,6 +73,7 @@ public class Tiles extends JPanel {
         this.piece.setType(pieceType);
         this.piece.setPieceColor(pieceColor);
         setBackground(color);
+        this.piece.setFilenamey(theString);
         try {
             BufferedImage tempimage = ImageIO.read(new File(theString));
             BufferedImage tempImage2 = resize(tempimage, 50, 50);
@@ -198,37 +207,37 @@ public class Tiles extends JPanel {
                 updateboard();
 
                 if(isthereacheck()) {
-/*                    System.out.println("in here");
-                    ourTempBoard.getChessboard()[getLocationx()][getLocationy()].attackingx=ourtile.getX();
-                    Tiles attacker=ourtile;
-                    piece=attacker.piece;
-                    image=attacker.image;
-                    inattack=false;
-                    isPieceOn=true;
-                    tileColor=attacker.tileColor;
-                    fileName=attacker.fileName;
-                    setLocationx(attacker.getLocationx());
-                    setLocationy(attacker.getLocationy());
-                    ourTempBoard=attacker.ourTempBoard;
+                   System.out.println("in here");
+
+
                     if(getPiece()!=null) {
                         getPiece().setX(getLocationx());
                         getPiece().setY(getLocationy());
+
+                        ourTempBoard.getChessboard()[tempx][tempy].attackingx = getLocationx();
+                        ourTempBoard.getChessboard()[tempx][tempy].attackingy = getLocationy();
+                        ourTempBoard.getChessboard()[tempx][tempy].movepiece(ourTempBoard);
+                        ourTempBoard.getChessboard()[tempx][tempy].repaint();
                     }
-*/                    ourTempBoard.getChessboard()[tempx][tempy].attackingx=getLocationx();
-                    ourTempBoard.getChessboard()[tempx][tempy].attackingy=getLocationy();
-                    ourTempBoard.getChessboard()[tempx][tempy].movepiece(ourTempBoard);
-                    ourTempBoard.getChessboard()[tempx][tempy].repaint();
+                    System.out.println("in the place i want look one line down");
+                    if(ourpiece!=null) {
+                        try {
+                            System.out.println(ourpiece.getFilenamey());
+                            ourTempBoard.getChessboard()[getLocationx()][getLocationy()].setPiece(ourpiece,ourpiece.getType(),ourpiece.getPieceColor(),ourpiece.getFilenamey());
+                        } catch (IOException ex) {
+                            ex.printStackTrace();
+                        }
+                    }
+                    updateboard();
+                    repaint();
+                    System.out.println(""+getX()+""+getY());
 
-
-
-                    if (ourTempBoard.getChessboard()[tempx][tempy].getPiece().getPieceColor() == PieceColor.BLACK) {
+                    if (ourpiece.getPieceColor() == PieceColor.BLACK) {
                         ourTempBoard.blackList.add(ourpiece);
                     } else {
                         ourTempBoard.whiteList.add(ourpiece);
                     }
-                    repaint();
 
-                    updateboard();
                 }}
                 //if there is we move it back and send a alert that there is a check
                 // after every turn we check to see if the other guy is in check and make a alert that there is a check
@@ -276,7 +285,6 @@ public class Tiles extends JPanel {
         image=attacker.image;
         inattack=false;
         isPieceOn=true;
-        tileColor=attacker.tileColor;
         fileName=attacker.fileName;
         ourTempBoard=attacker.ourTempBoard;
         getPiece().setX(getLocationx());
@@ -306,7 +314,6 @@ public class Tiles extends JPanel {
         image=attacker.image;
         inattack=false;
         isPieceOn=true;
-        tileColor=attacker.tileColor;
         fileName=attacker.fileName;
         ourTempBoard=attacker.ourTempBoard;
         getPiece().setX(getLocationx());
