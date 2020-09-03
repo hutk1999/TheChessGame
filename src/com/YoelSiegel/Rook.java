@@ -7,6 +7,7 @@ public class Rook extends Piece {
 
         super(pieceColor, x, y, PieceType.ROOK);
     }
+    private boolean hasevermoved=false;
 
     public void getLegalMoves(ChessBoard temp) {
         if(!temp.getChessboard()[getX()][getY()].isPieceOn()){

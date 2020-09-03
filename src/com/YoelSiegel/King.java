@@ -7,6 +7,7 @@ public class King extends Piece{
 
         super(ecolor, x, y, PieceType.KING);
     }
+    boolean hasevermoved=false;
     public void getLegalMoves(ChessBoard temp){
         if(!temp.getChessboard()[getX()][getY()].isPieceOn()){
             return;

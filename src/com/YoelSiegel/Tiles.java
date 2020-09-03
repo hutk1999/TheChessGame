@@ -174,6 +174,12 @@ public class Tiles extends JPanel {
             System.out.println(justmoved);
             if (background == Color.green) {
                 //we are gonna move the piece
+                int tempx=attackingx;
+                int tempy=attackingy;
+                Tiles tempattackingtile=ourTempBoard.getChessboard()[attackingx][attackingy];
+                Piece tempattackingpiece=tempattackingtile.getPiece();
+                Tiles ourtile=ourTempBoard.gettile(getLocationx(),getLocationy());
+                Piece ourpiece=getPiece();
                 if (inattack) {
                     attack(ourTempBoard);
                     setTheBackground(color);
@@ -190,22 +196,50 @@ public class Tiles extends JPanel {
                     }
                 }
                 updateboard();
-                //then we check if there is a check
+
+                if(isthereacheck()) {
+/*                    System.out.println("in here");
+                    ourTempBoard.getChessboard()[getLocationx()][getLocationy()].attackingx=ourtile.getX();
+                    Tiles attacker=ourtile;
+                    piece=attacker.piece;
+                    image=attacker.image;
+                    inattack=false;
+                    isPieceOn=true;
+                    tileColor=attacker.tileColor;
+                    fileName=attacker.fileName;
+                    setLocationx(attacker.getLocationx());
+                    setLocationy(attacker.getLocationy());
+                    ourTempBoard=attacker.ourTempBoard;
+                    if(getPiece()!=null) {
+                        getPiece().setX(getLocationx());
+                        getPiece().setY(getLocationy());
+                    }
+*/                    ourTempBoard.getChessboard()[tempx][tempy].attackingx=getLocationx();
+                    ourTempBoard.getChessboard()[tempx][tempy].attackingy=getLocationy();
+                    ourTempBoard.getChessboard()[tempx][tempy].movepiece(ourTempBoard);
+                    ourTempBoard.getChessboard()[tempx][tempy].repaint();
+
+
+
+                    if (ourTempBoard.getChessboard()[tempx][tempy].getPiece().getPieceColor() == PieceColor.BLACK) {
+                        ourTempBoard.blackList.add(ourpiece);
+                    } else {
+                        ourTempBoard.whiteList.add(ourpiece);
+                    }
+                    repaint();
+
+                    updateboard();
+                }}
                 //if there is we move it back and send a alert that there is a check
                 // after every turn we check to see if the other guy is in check and make a alert that there is a check
                 //we also need a turn function number
-            }
 
 
 
          else {
                 updateboard();
                 if (piece == null) {
-                    System.out.println("mis");
-                    System.out.println("mis" + getX() + "" + getY());
                 } else {
-                    System.out.println("hit" + getPiece().getX() + "" + getPiece().getY());
-                    System.out.println("hit" + getX() + "" + getY());
                     getPiece().getLegalMoves(ourTempBoard);
                 }
             }
@@ -312,6 +346,27 @@ public class Tiles extends JPanel {
                 }
             }
         }
+    }
+    public boolean isthereacheck(){
+        //1 is white 0 is black
+        if(getPiece().getPieceColor()==PieceColor.WHITE) {
+            Tiles kingtile = ourTempBoard.getChessboard()[ourTempBoard.arrofKings[1].getX()][ourTempBoard.arrofKings[1].getY()];
+
+
+            for (int i = 0; i <ourTempBoard.blackList.size();i++){
+                //make code that checks if we are attacked
+            }
+        }
+
+
+    else{
+            Tiles kingtile=ourTempBoard.getChessboard()[ourTempBoard.arrofKings[1].getX()][ourTempBoard.arrofKings[1].getY()];
+            for (int i = 0; i <ourTempBoard.blackList.size();i++){
+                //make code that checks if we are attacked
+            }
+        }
+        System.out.println("got here");
+    return true;
     }
 }
 
