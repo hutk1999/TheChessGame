@@ -18,12 +18,12 @@ public class Piece {
         this.y = y;
     }
 
-    public String gettheFileName() {
+    public String getTheFilename() {
         return theFileName;
     }
 
-    public void setTheFileName(String theFileName) {
-        this.theFileName = theFileName;
+    public void setTheFilename(String filename) {
+        this.theFileName = filename;
     }
 
     public void getLegalMoves(ChessBoard temp){}

@@ -73,7 +73,7 @@ public class Tiles extends JPanel {
         this.piece.setType(pieceType);
         this.piece.setPieceColor(pieceColor);
         setBackground(color);
-        this.piece.setTheFileName(theString);
+        this.piece.setTheFilename(theString);
         try {
             BufferedImage tempimage = ImageIO.read(new File(theString));
             BufferedImage tempImage2 = resize(tempimage, 50, 50);
@@ -180,7 +180,6 @@ public class Tiles extends JPanel {
             }
 
             background = getBackground();
-            System.out.println(justmoved);
             if (background == Color.green) {
                 //we are gonna move the piece
                 int tempx=attackingx;
@@ -207,8 +206,7 @@ public class Tiles extends JPanel {
                 updateboard();
 
                 if(isthereacheck()) {
-                   System.out.println("in here");
-                    ourTempBoard.turn=!ourTempBoard.turn;
+                ourTempBoard.turn=!ourTempBoard.turn;
 
                     if(getPiece()!=null) {
                         getPiece().setX(getLocationx());
@@ -219,18 +217,16 @@ public class Tiles extends JPanel {
                         ourTempBoard.getChessboard()[tempx][tempy].movepiece(ourTempBoard);
                         ourTempBoard.getChessboard()[tempx][tempy].repaint();
                     }
-                    System.out.println("in the place i want look one line down");
                     if(ourpiece!=null) {
                         try {
-                            System.out.println(ourpiece.gettheFileName());
-                            ourTempBoard.getChessboard()[getLocationx()][getLocationy()].setPiece(ourpiece,ourpiece.getType(),ourpiece.getPieceColor(),ourpiece.gettheFileName());
+                            System.out.println(ourpiece.getTheFilename());
+                            ourTempBoard.getChessboard()[getLocationx()][getLocationy()].setPiece(ourpiece,ourpiece.getType(),ourpiece.getPieceColor(),ourpiece.getTheFilename());
                         } catch (IOException ex) {
                             ex.printStackTrace();
                         }
                     }
                     updateboard();
                     repaint();
-                    System.out.println(""+getX()+""+getY());
                     if(ourpiece!=null) {
                         if (ourpiece.getPieceColor() == PieceColor.BLACK) {
                             ourTempBoard.blackList.add(ourpiece);
@@ -298,7 +294,6 @@ public class Tiles extends JPanel {
         updateboard();
         repaint();
         attacker.repaint();
-        System.out.println(""+getX()+""+getY());
     }
 
     public void attack(ChessBoard temp) {
@@ -327,7 +322,6 @@ public class Tiles extends JPanel {
         updateboard();
         repaint();
         attacker.repaint();
-        System.out.println(""+getX()+""+getY());
     }
 
     public int getLocationx() {
@@ -373,7 +367,6 @@ public class Tiles extends JPanel {
                 //make code that checks if we are attacked
             }
         }
-        System.out.println("got here");
     return true;
     }
 }
