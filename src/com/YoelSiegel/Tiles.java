@@ -187,7 +187,9 @@ public class Tiles extends JPanel {
                     if(piece.isNevermoved()&&ourTempBoard.getChessboard()[attackingx][attackingy].getPiece().isNevermoved()) {
                         if (piece.getType() == PieceType.KING) {
                             if (ourTempBoard.getChessboard()[attackingx][attackingy].getPiece().getType() == PieceType.ROOK) {
-
+                                if(isthereacheck()){
+                                    return;
+                                }
                                 if (attackingy == 7) {
                                     if ( ourTempBoard.getChessboard()[attackingx][attackingy].getPiece() != null) {
                                         ourTempBoard.getChessboard()[attackingx][attackingy].getPiece().setNevermoved(false);
@@ -225,6 +227,7 @@ public class Tiles extends JPanel {
                                     repaint();
                                     attacker.repaint();
                                     ourTempBoard.turn = !ourTempBoard.turn;
+                                    ourTempBoard.change=false;
                                     return;
                                 } else {
                                     if ( ourTempBoard.getChessboard()[attackingx][attackingy].getPiece() != null) {
@@ -263,6 +266,7 @@ public class Tiles extends JPanel {
                                     repaint();
                                     attacker.repaint();
                                     ourTempBoard.turn = !ourTempBoard.turn;
+                                    ourTempBoard.change=false;
                                     return;
                                 }
                             }
