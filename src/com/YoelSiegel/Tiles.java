@@ -353,18 +353,33 @@ public class Tiles extends JPanel {
         //1 is white 0 is black
         if(getPiece().getPieceColor()==PieceColor.WHITE) {
             Tiles kingtile = ourTempBoard.getChessboard()[ourTempBoard.arrofKings[1].getX()][ourTempBoard.arrofKings[1].getY()];
-
-
-            for (int i = 0; i <ourTempBoard.blackList.size();i++){
-                //make code that checks if we are attacked
+            for (int i = 0; i < ourTempBoard.blackList.size(); i++) {
+                ourTempBoard.blackList.get(i).getLegalMoves(ourTempBoard);
+                if (kingtile.getBackground() == Color.GREEN) {
+                    updateboard();
+                    repaint();
+                    return true;
+                }
+                updateboard();
+                repaint();
             }
+
+
         }
 
 
-    else{
-            Tiles kingtile=ourTempBoard.getChessboard()[ourTempBoard.arrofKings[1].getX()][ourTempBoard.arrofKings[1].getY()];
-            for (int i = 0; i <ourTempBoard.blackList.size();i++){
-                //make code that checks if we are attacked
+        else {
+            Tiles kingtile = ourTempBoard.getChessboard()[ourTempBoard.arrofKings[0].getX()][ourTempBoard.arrofKings[0].getY()];
+
+            for (int i = 0; i < ourTempBoard.whiteList.size(); i++) {
+                ourTempBoard.whiteList.get(i).getLegalMoves(ourTempBoard);
+                if (kingtile.getBackground() == Color.GREEN) {
+                    updateboard();
+                    repaint();
+                    return true;
+                }
+                updateboard();
+                repaint();
             }
         }
     return false;
