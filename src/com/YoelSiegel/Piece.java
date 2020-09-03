@@ -10,6 +10,7 @@ public class Piece {
     private PieceType type;
     public BufferedImage image;
     private String theFileName;
+    private boolean nevermoved=true;
 
     public Piece(PieceColor pieceColor, int x, int y,PieceType type){
         this.type = type;

@@ -41,7 +41,6 @@ public class ChessBoard extends JFrame {
 
             }
         }
-
     }
 
     /*public static JPanel getGamePanel() {
