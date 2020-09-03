@@ -44,6 +44,21 @@ public class Piece {
 
     }
 
+    public String getTheFileName() {
+        return theFileName;
+    }
+
+    public void setTheFileName(String theFileName) {
+        this.theFileName = theFileName;
+    }
+
+    public boolean isNevermoved() {
+        return nevermoved;
+    }
+
+    public void setNevermoved(boolean nevermoved) {
+        this.nevermoved = nevermoved;
+    }
 
     public int getX() {
         return x;

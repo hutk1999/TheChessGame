@@ -10,6 +10,7 @@ public class Rook extends Piece {
     private boolean hasevermoved=false;
 
     public void getLegalMoves(ChessBoard temp) {
+
         if(!temp.getChessboard()[getX()][getY()].isPieceOn()){
             return;
         }
@@ -51,6 +52,13 @@ public class Rook extends Piece {
                                 setincaseofattack(getX(),getY()-i,temp);
                                 break;
                             } else {
+                                if(isNevermoved()) {
+                                    if(temp.getChessboard()[getX()][getY()-i].isPieceOn()) {
+                                        if (temp.getChessboard()[getX()][getY()-i].getPiece().getType() == PieceType.KING) {
+                                            setincaseofattack(getX(), getY()-i, temp);
+                                        }
+                                    }
+                                }
                                 break;
                             }
                         } else {
@@ -65,6 +73,13 @@ public class Rook extends Piece {
                              setincaseofattack(getX(),getY()+i,temp);
                                 break;
                             } else {
+                                if(isNevermoved()) {
+                                    if(temp.getChessboard()[getX()][getY()+i].isPieceOn()) {
+                                        if (temp.getChessboard()[getX()][getY()+i].getPiece().getType() == PieceType.KING) {
+                                            setincaseofattack(getX(), getY()+i, temp);
+                                        }
+                                    }
+                                }
                                 break;
                             }
                         } else {

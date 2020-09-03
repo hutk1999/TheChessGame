@@ -178,9 +178,98 @@ public class Tiles extends JPanel {
                     }
                 }
             }
+            if(piece!=null) {
+            }
 
             background = getBackground();
             if (background == Color.green) {
+                if(piece!=null) {
+                    if(piece.isNevermoved()&&ourTempBoard.getChessboard()[attackingx][attackingy].getPiece().isNevermoved()) {
+                        if (piece.getType() == PieceType.KING) {
+                            if (ourTempBoard.getChessboard()[attackingx][attackingy].getPiece().getType() == PieceType.ROOK) {
+
+                                if (attackingy == 7) {
+                                    if ( ourTempBoard.getChessboard()[attackingx][attackingy].getPiece() != null) {
+                                        ourTempBoard.getChessboard()[attackingx][attackingy].getPiece().setNevermoved(false);
+                                    }
+                                    Tiles attacker = ourTempBoard.getChessboard()[attackingx][attackingy];
+                                    Tiles tempTiles = ourTempBoard.getChessboard()[attackingx][attackingy - 2];
+                                    tempTiles.setPiece(attacker.piece);
+                                    tempTiles.image = attacker.image;
+                                    tempTiles.inattack = false;
+                                    tempTiles.isPieceOn = true;
+                                    tempTiles.fileName = attacker.fileName;
+                                    tempTiles.getPiece().setX(attackingx);
+                                    tempTiles.getPiece().setY(attackingy - 2);
+                                    attacker.setPiece(null);
+                                    attacker.fileName = null;
+                                    attacker.image = null;
+                                    attacker.isPieceOn = false;
+                                    attacker.setTheBackground(attacker.color);
+                                    ourTempBoard.getChessboard()[attackingx][attackingy - 2] = tempTiles;
+                                    Tiles tempTileKing = ourTempBoard.getChessboard()[attackingx][attackingy - 3];
+                                    Tiles kingsLocation = ourTempBoard.getChessboard()[attackingx][attackingy - 1];
+                                    kingsLocation.setPiece(tempTileKing.piece);
+                                    kingsLocation.image = tempTileKing.image;
+                                    kingsLocation.inattack = false;
+                                    kingsLocation.isPieceOn = true;
+                                    kingsLocation.fileName = tempTileKing.fileName;
+                                    kingsLocation.getPiece().setX(attackingx);
+                                    kingsLocation.getPiece().setY(attackingy - 1);
+                                    tempTileKing.setPiece(null);
+                                    tempTileKing.fileName = null;
+                                    tempTileKing.image = null;
+                                    tempTileKing.isPieceOn = false;
+                                    tempTileKing.setTheBackground(attacker.color);
+                                    updateboard();
+                                    repaint();
+                                    attacker.repaint();
+                                    ourTempBoard.turn = !ourTempBoard.turn;
+                                    return;
+                                } else {
+                                    if ( ourTempBoard.getChessboard()[attackingx][attackingy].getPiece() != null) {
+                                        ourTempBoard.getChessboard()[attackingx][attackingy].getPiece().setNevermoved(false);
+                                    }
+                                    Tiles attacker = ourTempBoard.getChessboard()[attackingx][attackingy];
+                                    Tiles tempTiles = ourTempBoard.getChessboard()[attackingx][attackingy + 2];
+                                    tempTiles.setPiece(attacker.piece);
+                                    tempTiles.image = attacker.image;
+                                    tempTiles.inattack = false;
+                                    tempTiles.isPieceOn = true;
+                                    tempTiles.fileName = attacker.fileName;
+                                    tempTiles.getPiece().setX(attackingx);
+                                    tempTiles.getPiece().setY(attackingy + 2);
+                                    attacker.setPiece(null);
+                                    attacker.fileName = null;
+                                    attacker.image = null;
+                                    attacker.isPieceOn = false;
+                                    attacker.setTheBackground(attacker.color);
+                                    ourTempBoard.getChessboard()[attackingx][attackingy + 2] = tempTiles;
+                                    Tiles tempTileKing = ourTempBoard.getChessboard()[attackingx][attackingy + 4];
+                                    Tiles kingsLocation = ourTempBoard.getChessboard()[attackingx][attackingy + 1];
+                                    kingsLocation.setPiece(tempTileKing.piece);
+                                    kingsLocation.image = tempTileKing.image;
+                                    kingsLocation.inattack = false;
+                                    kingsLocation.isPieceOn = true;
+                                    kingsLocation.fileName = tempTileKing.fileName;
+                                    kingsLocation.getPiece().setX(attackingx);
+                                    kingsLocation.getPiece().setY(attackingy + 1);
+                                    tempTileKing.setPiece(null);
+                                    tempTileKing.fileName = null;
+                                    tempTileKing.image = null;
+                                    tempTileKing.isPieceOn = false;
+                                    tempTileKing.setTheBackground(attacker.color);
+                                    updateboard();
+                                    repaint();
+                                    attacker.repaint();
+                                    ourTempBoard.turn = !ourTempBoard.turn;
+                                    return;
+                                }
+                            }
+                        }
+                    }
+                }
+
                 //we are gonna move the piece
                 int tempx=attackingx;
                 int tempy=attackingy;
@@ -188,14 +277,20 @@ public class Tiles extends JPanel {
                 Piece tempattackingpiece=tempattackingtile.getPiece();
                 Tiles ourtile=ourTempBoard.gettile(getLocationx(),getLocationy());
                 Piece ourpiece=getPiece();
+
                 if (inattack) {
+                    if( ourTempBoard.getChessboard()[attackingx][attackingy].getPiece()!=null) {
+                        ourTempBoard.getChessboard()[attackingx][attackingy].getPiece().setNevermoved(false);                    }
                     attack(ourTempBoard);
                     setTheBackground(color);
                     if(ourTempBoard.change){
                         ourTempBoard.turn=!ourTempBoard.turn;
                         ourTempBoard.change=false;
                     }
+
                 } else {
+                    if( ourTempBoard.getChessboard()[attackingx][attackingy].getPiece()!=null) {
+                        ourTempBoard.getChessboard()[attackingx][attackingy].getPiece().setNevermoved(false);                    }
                     movepiece(ourTempBoard);
                     setTheBackground(color);
                     if(ourTempBoard.change){
@@ -323,6 +418,7 @@ public class Tiles extends JPanel {
         repaint();
         attacker.repaint();
     }
+
 
     public int getLocationx() {
         return locationx;
